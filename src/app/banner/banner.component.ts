@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'utz-banner',
+  selector: 'app-banner',
   templateUrl: './banner.component.html',
   styleUrls: ['./banner.component.scss']
 })
 export class BannerComponent implements OnInit {
+  @Input() title: string;
 
   constructor() { }
 
