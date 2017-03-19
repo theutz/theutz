@@ -1,5 +1,5 @@
 @import "../../styles.scss";
-.background {
-    background-color: $brand-dark;
-    height: (#{map-get($grid-breakpoints, sm) / 2});
+.container {
+  @extend .mt-4;
+  @extend .py-4;
 }

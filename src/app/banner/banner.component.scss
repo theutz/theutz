@@ -1,48 +1,44 @@
 @import "../../styles.scss";
 .jumbotron {
-    @extend .d-flex;
-    @extend .justify-content-center;
-    @extend .align-items-center;
-
-    height: #{map-get($grid-breakpoints, sm) / 2};
-    background-image: url('/assets/hardwood-floor-1600.jpg');
-    background-size: cover;
-    border-radius: 0;
-    background-position: center center;
-    margin: 0;
-
-    @include media-breakpoint-up(md) {
-        height: #{map-get($grid-breakpoints, md) / 2};
-    }
-
-    @include media-breakpoint-up(lg) {
-        height: #{map-get($grid-breakpoints, lg) / 2};
-    }
-
-    @include media-breakpoint-up(xl) {
-        height: #{map-get($grid-breakpoints, xl) / 2};
-    }
+  @extend .d-flex;
+  @extend .justify-content-center;
+  @extend .align-items-center;
+  height: #{map-get($grid-breakpoints, sm) / 2};
+  background: url('/assets/desk-1600.jpg');
+  background-size: cover;
+  background-position: center center;
+  border-radius: 0;
+  margin: 0;
+  @include media-breakpoint-up(md) {
+    height: #{map-get($grid-breakpoints, md) / 2};
+  }
+  @include media-breakpoint-up(lg) {
+    height: #{map-get($grid-breakpoints, lg) / 2};
+  }
+  @include media-breakpoint-up(xl) {
+    height: #{map-get($grid-breakpoints, xl) / 2};
+  }
 }
 
 h1 {
-    font-size: $display4-size;
-    color: $white;
-    text-shadow: 4px 4px 4px $brand-dark;
-    text-align: center;
-
-    @include media-breakpoint-up(sm) {
-        font-size: $display3-size;
-    }
-
-    @include media-breakpoint-up(md) {
-        font-size: $display2-size;
-    }
-
-    @include media-breakpoint-up(lg) {
-        font-size: $display1-size;
-    }
-
-    @include media-breakpoint-up(xl) {
-        font-size: $display1-size * 1.5;
-    }
+  @extend .display-4;
+  color: $white;
+  text-shadow: 3px 3px 4px $brand-dark;
+  text-align: center;
+  opacity: 0.9;
+  padding-top: 45px;
+  font-family: 'Eczar';
+  @include media-breakpoint-up(sm) {
+    font-size: $display3-size;
+  }
+  @include media-breakpoint-up(md) {
+    font-size: $display2-size;
+  }
+  @include media-breakpoint-up(lg) {
+    font-size: $display1-size;
+    padding-top: 80px;
+  }
+  @include media-breakpoint-up(xl) {
+    font-size: $display1-size * 1.5;
+  }
 }

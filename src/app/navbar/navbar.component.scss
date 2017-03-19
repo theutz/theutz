@@ -1,0 +1,16 @@
+@import "../../styles.scss";
+nav {
+  @extend .sticky-top;
+  background: $brand-dark;
+}
+
+ul {
+  @extend .py-3;
+  @extend .list-unstyled;
+  @extend .d-flex;
+  @extend .justify-content-around;
+}
+
+li {}
+
+a {}
