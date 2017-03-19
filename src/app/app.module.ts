@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { BannerComponent } from './banner/banner.component';
 import { SkillsComponent } from './skills/skills.component';
 import { SpaceToBrPipe } from './space-to-br.pipe';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BannerComponent,
     SkillsComponent,
-    SpaceToBrPipe
+    SpaceToBrPipe,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
