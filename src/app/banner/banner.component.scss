@@ -4,12 +4,12 @@
     @extend .justify-content-center;
     @extend .align-items-center;
 
-    height: #{map-get($grid-breakpoints, sm)} / 2;
-
+    height: #{map-get($grid-breakpoints, sm) / 2};
     background-image: url('/assets/hardwood-floor-1600.jpg');
     background-size: cover;
     border-radius: 0;
     background-position: center center;
+    margin: 0;
 
     @include media-breakpoint-up(md) {
         height: #{map-get($grid-breakpoints, md) / 2};
