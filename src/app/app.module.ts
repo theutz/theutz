@@ -6,12 +6,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { BannerComponent } from './banner/banner.component';
 import { SkillsComponent } from './skills/skills.component';
+import { SpaceToBrPipe } from './space-to-br.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     BannerComponent,
-    SkillsComponent
+    SkillsComponent,
+    SpaceToBrPipe
   ],
   imports: [
     BrowserModule,
