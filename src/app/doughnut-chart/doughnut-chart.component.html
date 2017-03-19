@@ -1,5 +1,5 @@
-<div class="d-block">
-  <h2>{{name}}</h2>
-  <p class="text-muted"> {{level}}% </p>
+<h3 class="title">{{name}}</h3>
+<div>
   <canvas app-doughnut-chart-canvas [label]="name" [level]="level" [color]="color"></canvas>
+  <p class="percentage">{{level}}</p>
 </div>

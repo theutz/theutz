@@ -21,7 +21,7 @@ export class DoughnutChartCanvasDirective implements OnDestroy, OnChanges, OnIni
 
   ngOnInit() {
     if (!tinycolor(this.baseColor).isValid()) {
-      throw new Error('Color provided is invalid');
+      throw new Error(`Color provided (${this.baseColor}) is invalid`);
     }
 
     this.ctx = this.element.nativeElement.getContext('2d');
@@ -69,11 +69,11 @@ export class DoughnutChartCanvasDirective implements OnDestroy, OnChanges, OnIni
     const tc = tinycolor(this.baseColor);
     return tc.isDark()
       ? tc.brighten(50).desaturate().toHexString()
-      : tc.desaturate(50).toHexString();
+      : tc.brighten(20).desaturate(15).toHexString();
   }
 
   private _getHoverColor(color: string): string {
-    return tinycolor(color).brighten().desaturate().toHexString();
+    return tinycolor(color).brighten().toHexString();
   }
 
   private _getChartBuilder(ctx: any): any {
