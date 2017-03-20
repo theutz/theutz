@@ -1,0 +1,27 @@
+@import "../../styles.scss";
+:host {
+  @extend .d-flex;
+  @extend .justify-content-center;
+  @extend .flex-wrap;
+}
+
+.title {
+  @extend .h4;
+  @extend .w-100;
+  @extend .mb-4;
+  text-align: center;
+}
+
+.percentage {
+  @extend .display-4;
+  height: 0;
+  color: $brand-accent-3;
+  text-align: center;
+  position: relative;
+  bottom: 96px;
+}
+
+canvas {
+  max-height: 130px;
+  max-width: 130px;
+}

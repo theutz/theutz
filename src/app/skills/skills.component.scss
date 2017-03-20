@@ -1,0 +1,26 @@
+@import "../../styles.scss";
+.container {
+  @extend .py-4;
+}
+
+.title {
+  @extend .my-3;
+  text-align: center;
+}
+
+.skills {
+  @extend .d-flex;
+  @extend .justify-content-around;
+  @extend .flex-wrap;
+}
+
+app-doughnut-chart {
+  @extend .p-3;
+  max-width: 50%;
+  @include media-breakpoint-up(sm) {
+    width: 33%;
+  }
+  @include media-breakpoint-up(md) {
+    width: 25%;
+  }
+}

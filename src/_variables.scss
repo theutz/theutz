@@ -1,0 +1,13 @@
+@import "../node_modules/bootstrap/scss/_variables.scss";
+// Name Semantic Colors
+$brand-primary: $color1;
+$brand-accent-1: $color2;
+$brand-accent-2: $color3;
+$brand-accent-3: $color4;
+$brand-dark: $color5;
+// Customize Changes
+$link-color: $brand-accent-2;
+$headings-color: $brand-dark;
+// Fonts
+$font-family-base: "Lato",
+$font-family-sans-serif;

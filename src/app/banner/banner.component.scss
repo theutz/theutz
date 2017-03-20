@@ -1,0 +1,73 @@
+@import "../../styles.scss";
+.jumbotron {
+  @extend .d-flex;
+  @extend .justify-content-center;
+  @extend .align-items-center;
+  @extend .flex-wrap;
+  height: 100vh;
+  background: url('/assets/desk-1600.jpg');
+  background-size: cover;
+  background-position: center center;
+  border-radius: 0;
+  margin: 0;
+  // @include media-breakpoint-up(sm) {
+  //   height: #{map-get($grid-breakpoints, sm) / 1.5};
+  // }
+  // @include media-breakpoint-up(md) {
+  //   height: #{map-get($grid-breakpoints, md) / 2};
+  // }
+  // @include media-breakpoint-up(lg) {
+  //   height: #{map-get($grid-breakpoints, lg) / 2};
+  // }
+  // @include media-breakpoint-up(xl) {
+  //   height: #{map-get($grid-breakpoints, xl) / 2};
+  // }
+}
+
+h1 {
+  @extend .display-4;
+  text-align: center;
+  padding-top: 45px;
+  font-family: 'Eczar';
+  color: $white;
+  opacity: 0.85;
+  text-shadow: 3px 3px 4px $brand-dark;
+  @include media-breakpoint-up(sm) {
+    font-size: $display3-size;
+  }
+  @include media-breakpoint-up(md) {
+    font-size: $display2-size;
+  }
+  @include media-breakpoint-up(lg) {
+    font-size: $display1-size;
+    padding-top: 80px;
+  }
+  @include media-breakpoint-up(xl) {
+    font-size: $display1-size * 1.5;
+  }
+}
+
+.roles {
+  @extend .w-100;
+  @extend .d-flex;
+  @extend .justify-content-center;
+  @extend .p-0;
+  @extend .mb-0;
+  list-style-type: none;
+}
+
+.role,
+.role:not(:last-of-type)::after {
+  @extend .ml-1;
+  @extend .p-0;
+}
+
+.role {
+  @extend .display-4;
+  color: darken($white, 20);
+  text-shadow: 1px 1px 2px transparentize($brand-dark, 0.4);
+  font-size: $font-size-h5;
+  &:not(:last-of-type)::after {
+    content: attr(data-divider);
+  }
+}
