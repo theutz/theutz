@@ -1,9 +1,8 @@
 <nav>
   <div class="container">
     <ul>
-      <li>
-        <a href="#">Skills</a>
-        <a href="#">Work History</a>
+      <li *ngFor="let item of links">
+        <a [href]="'#' + item.id">{{item.label}}</a>
       </li>
     </ul>
   </div>

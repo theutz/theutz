@@ -1,3 +1,4 @@
+import { NavbarLinksService } from './navbar-links.service';
 import { WorkHistoryService } from './work-history.service';
 import { AppComponent } from './app.component';
 import { BannerComponent } from './banner/banner.component';
@@ -33,7 +34,8 @@ import { WorkHistoryDatePipe } from './work-history-date.pipe';
   ],
   providers: [
     SkillsService,
-    WorkHistoryService
+    WorkHistoryService,
+    NavbarLinksService
   ],
   bootstrap: [AppComponent]
 })

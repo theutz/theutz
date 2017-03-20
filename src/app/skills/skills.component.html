@@ -1,5 +1,5 @@
 <div class="container">
-  <h2 class="title">Skills</h2>
+  <h2 id="{{sectionId}}" class="title">Skills</h2>
   <div class="skills">
     <app-doughnut-chart *ngFor="let skill of skills" [name]="skill.name" [level]="skill.level" [color]="chartColor"></app-doughnut-chart>
   </div>

@@ -11,6 +11,14 @@ ul {
   @extend .justify-content-around;
 }
 
-li {}
+li {
+  @extend .mx-1;
+  @extend .h5;
+}
 
-a {}
+a {
+  color: $brand-primary;
+  &:hover {
+    color: $white;
+  }
+}

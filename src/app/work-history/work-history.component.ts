@@ -1,3 +1,4 @@
+import { NavbarLinksService } from '../navbar-links.service';
 import { WorkHistoryItem, WorkHistoryService } from '../work-history.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,14 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./work-history.component.scss']
 })
 export class WorkHistoryComponent implements OnInit {
+  sectionId = 'work-history';
   history: WorkHistoryItem[] = [];
 
   constructor(
-    private _historyService: WorkHistoryService
+    private _historyService: WorkHistoryService,
+    private _navLinkService: NavbarLinksService
   ) { }
 
   ngOnInit() {
-    this._historyService.history$.subscribe(item => this.history.push(item));
+    this._navLinkService
+      .addLink({ label: 'History', id: this.sectionId });
+    this._historyService.history$
+      .subscribe(item => this.history.push(item));
   }
 
 }
