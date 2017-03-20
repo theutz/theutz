@@ -1,3 +1,4 @@
+import { WorkHistoryService } from './work-history.service';
 import { AppComponent } from './app.component';
 import { BannerComponent } from './banner/banner.component';
 import { DoughnutChartComponent } from './doughnut-chart/doughnut-chart.component';
@@ -11,6 +12,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { DoughnutChartCanvasDirective } from './doughnut-chart-canvas/doughnut-chart-canvas.component';
 import { SkillsService } from './skills.service';
 import { WorkHistoryComponent } from './work-history/work-history.component';
+import { WorkHistoryDatePipe } from './work-history-date.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { WorkHistoryComponent } from './work-history/work-history.component';
     NavbarComponent,
     DoughnutChartComponent,
     DoughnutChartCanvasDirective,
-    WorkHistoryComponent
+    WorkHistoryComponent,
+    WorkHistoryDatePipe
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,8 @@ import { WorkHistoryComponent } from './work-history/work-history.component';
     HttpModule,
   ],
   providers: [
-    SkillsService
+    SkillsService,
+    WorkHistoryService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,20 @@
+@import "../../styles.scss";
+:host {
+  @extend .d-block;
+  background-color: $brand-primary;
+}
+
+.card-header {
+  &>* {
+    @extend .my-0;
+  }
+}
+
+.container {
+  @extend .py-4;
+}
+
+.title {
+  @extend .display-4;
+  text-align: center;
+}

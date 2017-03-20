@@ -1,3 +1,17 @@
-<p>
-  work-history works!
-</p>
+<div class="container">
+  <h2 class="title">Work History</h2>
+  <div class="card" *ngFor="let item of history">
+    <div class="card-header">
+      <h4>{{item.company}}</h4>
+    </div>
+    <div class="card-block">
+      <h5 class="card-title">{{item.title}}</h5>
+      <div [innerHtml]="item.description"></div>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">
+      {{item.startDate | workHistoryDate}} to {{item.endDate | workHistoryDate}}
+      </small>
+    </div>
+  </div>
+</div>
