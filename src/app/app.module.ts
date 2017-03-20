@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { DoughnutChartCanvasDirective } from './doughnut-chart-canvas/doughnut-chart-canvas.component';
-
+import { SkillsService } from './skills.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,9 @@ import { DoughnutChartCanvasDirective } from './doughnut-chart-canvas/doughnut-c
     FormsModule,
     HttpModule,
   ],
-  providers: [],
+  providers: [
+    SkillsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

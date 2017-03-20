@@ -1,33 +1,33 @@
 @import "../../styles.scss";
 .jumbotron {
   @extend .d-flex;
+  @extend .flex-column;
   @extend .justify-content-center;
-  @extend .align-items-center;
-  @extend .flex-wrap;
   height: 100vh;
-  background: url('/assets/desk-1600.jpg');
+  background-image: url('/assets/desk-576.jpg');
   background-size: cover;
   background-position: center center;
+  background-repeat: no-repeat;
   border-radius: 0;
   margin: 0;
-  // @include media-breakpoint-up(sm) {
-  //   height: #{map-get($grid-breakpoints, sm) / 1.5};
-  // }
-  // @include media-breakpoint-up(md) {
-  //   height: #{map-get($grid-breakpoints, md) / 2};
-  // }
-  // @include media-breakpoint-up(lg) {
-  //   height: #{map-get($grid-breakpoints, lg) / 2};
-  // }
-  // @include media-breakpoint-up(xl) {
-  //   height: #{map-get($grid-breakpoints, xl) / 2};
-  // }
+  @include media-breakpoint-up(sm) {
+    background-image: url('/assets/desk-768.jpg');
+  }
+  @include media-breakpoint-up(md) {
+    background-image: url('/assets/desk-992.jpg');
+  }
+  @include media-breakpoint-up(lg) {
+    background-image: url('/assets/desk-1200.jpg');
+  }
+  @include media-breakpoint-up(xl) {
+    background-image: url('/assets/desk-1600.jpg');
+  }
 }
 
 h1 {
   @extend .display-4;
+  @extend .mb-2;
   text-align: center;
-  padding-top: 45px;
   font-family: 'Eczar';
   color: $white;
   opacity: 0.85;
@@ -40,7 +40,6 @@ h1 {
   }
   @include media-breakpoint-up(lg) {
     font-size: $display1-size;
-    padding-top: 80px;
   }
   @include media-breakpoint-up(xl) {
     font-size: $display1-size * 1.5;
@@ -48,7 +47,6 @@ h1 {
 }
 
 .roles {
-  @extend .w-100;
   @extend .d-flex;
   @extend .justify-content-center;
   @extend .p-0;
@@ -69,5 +67,17 @@ h1 {
   font-size: $font-size-h5;
   &:not(:last-of-type)::after {
     content: attr(data-divider);
+  }
+  @include media-breakpoint-up(sm) {
+    font-size: $font-size-h3;
+  }
+  @include media-breakpoint-up(md) {
+    font-size: $font-size-h2;
+  }
+  @include media-breakpoint-up(lg) {
+    font-size: $font-size-h1;
+  }
+  @include media-breakpoint-up(xl) {
+    font-size: $display4-size;
   }
 }
