@@ -1,1 +1,4 @@
-
+h2 {
+  @extend .display-4;
+  @extend .my-4;
+}
