@@ -13,6 +13,69 @@ export class WorkHistoryService {
       endDate: new Date(),
       city: 'Nashville',
       state: 'Tennessee'
+    },
+    {
+      company: 'Uber/Lyft',
+      title: 'Driver',
+      description: '',
+      startDate: new Date(2015, 5),
+      endDate: new Date(2016, 1),
+      city: 'Nashville',
+      state: 'Tennessee'
+    },
+    {
+      company: 'Emergency Reporting',
+      title: 'Content Writer/Producer',
+      description: '',
+      startDate: new Date(2013, 6),
+      endDate: new Date(2015, 2),
+      city: 'Bellingham',
+      state: 'Washington'
+    },
+    {
+      company: 'Christ United Methodist Church',
+      title: 'Creative Director',
+      description: '',
+      startDate: new Date(2012, 5),
+      endDate: new Date(2013, 1),
+      city: 'Davenport',
+      state: 'Iowa'
+    },
+    {
+      company: 'SimpleDelta, LLC',
+      title: 'Vice-President/Co-Founder',
+      description: '',
+      startDate: new Date(2010, 11),
+      endDate: new Date(2012, 5),
+      city: 'Bellingham',
+      state: 'Washington'
+    },
+    {
+      company: 'ShareNow, Inc',
+      title: 'Project Coordinator',
+      description: '',
+      startDate: new Date(2009, 1),
+      endDate: new Date(2010, 7),
+      city: 'Bellingham',
+      state: 'Washington'
+    },
+    {
+      company: 'Northwest University',
+      title: 'Associate Director of Media Services & Adjunct Faculty',
+      description: '',
+      startDate: new Date(2007, 7),
+      endDate: new Date(2009, 5),
+      city: 'Kirkland',
+      state: 'Washington'
+    },
+    {
+      company: 'Courtyard by Marriott',
+      title: 'Front Desk Supervisor',
+      description: '',
+      startDate: new Date(2006, 10),
+      endDate: new Date(2007, 7),
+      city: 'Kirkland',
+      state: 'Washington'
     }
   ];
 

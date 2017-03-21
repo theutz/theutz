@@ -14,6 +14,7 @@ import { DoughnutChartCanvasDirective } from './doughnut-chart-canvas/doughnut-c
 import { SkillsService } from './skills.service';
 import { WorkHistoryComponent } from './work-history/work-history.component';
 import { WorkHistoryDatePipe } from './work-history-date.pipe';
+import { CollapseModule } from 'ng2-bootstrap/collapse';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { WorkHistoryDatePipe } from './work-history-date.pipe';
     BrowserModule,
     FormsModule,
     HttpModule,
+    CollapseModule
   ],
   providers: [
     SkillsService,

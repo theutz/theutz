@@ -1,7 +1,28 @@
 @import "../../styles.scss";
 :host {
   @extend .d-block;
-  background-color: $brand-primary;
+  background-image: radial-gradient(lighten($brand-dark, 10%), $brand-dark);
+  background-repeat: no-repeat;
+  box-shadow: inset 0 3px 3px 0 $brand-dark;
+}
+
+.history {
+  @extend .d-flex;
+  @extend .flex-wrap;
+  @extend .justify-content-around;
+}
+
+.card {
+  @extend .my-3;
+  width: 100%;
+  opacity: 0.9;
+  box-shadow: 1px 1px 1px $brand-dark;
+  @include media-breakpoint-up(sm) {
+    width: 48%;
+  }
+  @include media-breakpoint-up(lg) {
+    width: 32%;
+  }
 }
 
 .card-header {
@@ -17,4 +38,7 @@
 .title {
   @extend .display-4;
   text-align: center;
+  color: $white;
+  text-shadow: 1px 1px 3px $brand-dark;
+  opacity: 0.85;
 }
