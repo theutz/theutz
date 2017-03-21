@@ -21,7 +21,8 @@
       "styles.scss"
     ],
     "scripts": [
-      "../node_modules/chart.js/dist/Chart.bundle.js"
+      "../node_modules/chart.js/dist/Chart.bundle.js",
+      "../node_modules/chartjs-plugin-deferred/dist/chartjs-plugin-deferred.js"
     ],
     "environments": {
       "source": "environments/environment.ts",
