@@ -1,6 +1,8 @@
-import * as Chart from 'chart.js';
+import * as ChartJs from 'chart.js';
 import { Component, Directive, ElementRef, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import * as tinycolor from 'tinycolor2';
+
+declare var Chart: any;
 
 /* tslint:disable-next-line */
 @Directive({ selector: 'canvas[app-doughnut-chart-canvas]' })
@@ -58,7 +60,7 @@ export class DoughnutChartCanvasDirective implements OnDestroy, OnChanges, OnIni
         ]
       },
       options: {
-        deferred: { enabled: true, delay: 1000 },
+        deferred: { enabled: true, yOffset: '25%', delay: 500 },
         tooltips: { enabled: false },
         legend: { display: false },
         cutoutPercentage: this.cutoutPercentage,
