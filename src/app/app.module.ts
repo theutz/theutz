@@ -1,3 +1,5 @@
+import { NavbarLinksService } from './navbar-links.service';
+import { WorkHistoryService } from './work-history.service';
 import { AppComponent } from './app.component';
 import { BannerComponent } from './banner/banner.component';
 import { DoughnutChartComponent } from './doughnut-chart/doughnut-chart.component';
@@ -10,6 +12,9 @@ import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { DoughnutChartCanvasDirective } from './doughnut-chart-canvas/doughnut-chart-canvas.component';
 import { SkillsService } from './skills.service';
+import { WorkHistoryComponent } from './work-history/work-history.component';
+import { WorkHistoryDatePipe } from './work-history-date.pipe';
+import { CollapseModule } from 'ng2-bootstrap/collapse';
 
 @NgModule({
   declarations: [
@@ -19,15 +24,20 @@ import { SkillsService } from './skills.service';
     SpaceToBrPipe,
     NavbarComponent,
     DoughnutChartComponent,
-    DoughnutChartCanvasDirective
+    DoughnutChartCanvasDirective,
+    WorkHistoryComponent,
+    WorkHistoryDatePipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    CollapseModule
   ],
   providers: [
-    SkillsService
+    SkillsService,
+    WorkHistoryService,
+    NavbarLinksService
   ],
   bootstrap: [AppComponent]
 })

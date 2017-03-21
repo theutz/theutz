@@ -1,3 +1,4 @@
+import { NavbarLink, NavbarLinksService } from '../navbar-links.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  links: NavbarLink[] = [];
 
-  constructor() { }
+  constructor(
+    private _navLinkService: NavbarLinksService
+  ) { }
 
   ngOnInit() {
+    this._navLinkService.links$.subscribe(link => this.links.push(link));
   }
 
 }
+

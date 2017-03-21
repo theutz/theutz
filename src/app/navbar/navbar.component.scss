@@ -1,7 +1,8 @@
 @import "../../styles.scss";
 nav {
   @extend .sticky-top;
-  background: $brand-dark;
+  background-image: linear-gradient($brand-dark, darken($brand-dark, 2%));
+  background-color: $brand-dark;
 }
 
 ul {
@@ -11,6 +12,16 @@ ul {
   @extend .justify-content-around;
 }
 
-li {}
+li {
+  @extend .mx-1;
+  @extend .h5;
+}
 
-a {}
+a {
+  color: $brand-primary;
+  @include transition($btn-transition);
+  &:hover {
+    color: $white;
+    text-decoration: none;
+  }
+}

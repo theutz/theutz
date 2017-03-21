@@ -1,4 +1,8 @@
 @import "../../styles.scss";
+:host {
+  @extend .d-block;
+}
+
 .container {
   @extend .py-4;
 }
