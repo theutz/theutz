@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class WorkHistoryComponent implements OnInit {
   sectionId = 'work-history';
   history: WorkHistoryItem[] = [];
+  hideAll = true;
 
   constructor(
     private _historyService: WorkHistoryService,
@@ -21,6 +22,15 @@ export class WorkHistoryComponent implements OnInit {
       .addLink({ label: 'History', id: this.sectionId });
     this._historyService.history$
       .subscribe(item => this.history.push(item));
+  }
+
+  toggleAll() {
+    this.hideAll = !this.hideAll;
+  }
+
+  toggleBlock(block: any) {
+    console.log(block);
+    // block.toggle();
   }
 
 }

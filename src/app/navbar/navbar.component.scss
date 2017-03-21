@@ -19,6 +19,7 @@ li {
 
 a {
   color: $brand-primary;
+  @include transition($btn-transition);
   &:hover {
     color: $white;
     text-decoration: none;

@@ -1,23 +1,33 @@
-import { Observable, ReplaySubject } from 'rxjs/Rx';
 import { Injectable } from '@angular/core';
+import { Observable, ReplaySubject } from 'rxjs/Rx';
 
 @Injectable()
 export class WorkHistoryService {
   private _src: ReplaySubject<WorkHistoryItem> = new ReplaySubject<WorkHistoryItem>();
+  history$: Observable<WorkHistoryItem>;
+
+  constructor() {
+    this.history$ = this._src.asObservable();
+    this._defaultItems.map(item => this._src.next(item));
+  }
+
+  /* tslint:disable-next-line:member-ordering */
   private _defaultItems: WorkHistoryItem[] = [
     {
       company: 'Loews Hotels',
       title: 'Travel Planner',
-      description: 'Reservations agent at Loews Hotels (NYSE: L). Among the top agents in both sales numbers and service measures.',
+      /* tslint:disable-next-line:max-line-length */
+      description: 'Reservations agent at <a href="http://loewshotels.com" target="_blank">Loews Hotels</a> (NYSE: L). Among the top agents in both sales numbers and service measures.',
       startDate: new Date(2015, 12),
       endDate: new Date(),
       city: 'Nashville',
       state: 'Tennessee'
     },
     {
-      company: 'Uber/Lyft',
+      company: 'Uber & Lyft',
       title: 'Driver',
-      description: 'Set out for some advenutre as a self-employed driver in one of the nation\'s fastest growing cities.',
+      /* tslint:disable-next-line:max-line-length */
+      description: 'Set out for some advenutre as a self-employed Uber & Lyft driver in one of the nation\'s fastest growing cities.',
       startDate: new Date(2015, 5),
       endDate: new Date(2016, 1),
       city: 'Nashville',
@@ -37,7 +47,7 @@ export class WorkHistoryService {
       company: 'Christ Church',
       title: 'Creative Director',
       /* tslint:disable-next-line:max-line-length */
-      description: 'Supervised music, media, and web services for the congregation. Built <a href="http://christchurchdavenport.org">christchurchdavenport.org</a> on Squarespace.',
+      description: 'Supervised music, media, and web services for the congregation. Built <a href="http://christchurchdavenport.org" target="_blank">christchurchdavenport.org</a> on Squarespace.',
       startDate: new Date(2012, 5),
       endDate: new Date(2013, 1),
       city: 'Davenport',
@@ -64,6 +74,7 @@ export class WorkHistoryService {
     {
       company: 'Northwest University',
       title: 'Associate Director of Media Services & Adjunct Faculty',
+      /* tslint:disable-next-line:max-line-length */
       description: 'Oversee all recorded media for Northwest University, producing multiple full-length albums. Taught a music technology course.',
       startDate: new Date(2007, 7),
       endDate: new Date(2009, 5),
@@ -80,13 +91,6 @@ export class WorkHistoryService {
       state: 'Washington'
     }
   ];
-
-  history$: Observable<WorkHistoryItem>;
-
-  constructor() {
-    this.history$ = this._src.asObservable();
-    this._defaultItems.map(item => this._src.next(item));
-  }
 }
 
 export interface WorkHistoryItem {

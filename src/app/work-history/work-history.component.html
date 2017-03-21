@@ -1,11 +1,15 @@
 <div class="container">
   <h2 [id]="sectionId" class="title">Work History</h2>
+  <div class="visibility">
+    <button class="btn" (click)="toggleAll()">{{hideAll ? 'Show' : 'Hide'}} All &nbsp;<i class="fa" [ngClass]="{'fa-expand': hideAll, 'fa-compress': !hideAll}" aria-hidden="true"></i></button>
+  </div>
   <div class="history">
     <div class="card" *ngFor="let item of history">
-      <div class="card-header">
+      <div class="card-header" (click)="bs-collapse.toggle()">
         <h4>{{item.company}}</h4>
+        <i class="fa" [ngClass]="{'fa-chevron-down': !collapse.collapse, 'fa-chevron-up': collapse.collapse }" aria-hidden="true"></i>
       </div>
-      <div class="card-block">
+      <div class="card-block" #collapse="bs-collapse" [collapse]="hideAll">
         <h5 class="card-title">{{item.title}}</h5>
         <div [innerHtml]="item.description"></div>
       </div>
