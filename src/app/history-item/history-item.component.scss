@@ -1,0 +1,27 @@
+@import "../../styles.scss";
+:host {
+  @extend .my-3;
+  @extend .align-self-start;
+  @extend .card;
+  width: 100%;
+  opacity: 0.9;
+  box-shadow: 1px 1px 1px $brand-dark;
+  @include media-breakpoint-up(sm) {
+    width: 48%;
+  }
+  @include media-breakpoint-up(lg) {
+    width: 32%;
+  }
+}
+
+.card-header {
+  @extend .d-flex;
+  @extend .justify-content-start;
+  &>* {
+    @extend .my-0;
+  }
+  &>i {
+    @extend .ml-auto;
+    @extend .d-block;
+  }
+}
