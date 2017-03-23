@@ -1,3 +1,4 @@
+import { EducationService } from './education.service';
 import { NavbarLinksService } from './navbar-links.service';
 import { WorkHistoryService } from './work-history.service';
 import { AppComponent } from './app.component';
@@ -17,6 +18,7 @@ import { WorkHistoryDatePipe } from './work-history-date.pipe';
 import { CollapseModule } from 'ng2-bootstrap/collapse';
 import { HistoryItemComponent } from './history-item/history-item.component';
 import { EducationComponent } from './education/education.component';
+import { PlaceholderIfEmptyPipe } from './placeholder-if-empty.pipe';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { EducationComponent } from './education/education.component';
     WorkHistoryComponent,
     WorkHistoryDatePipe,
     HistoryItemComponent,
-    EducationComponent
+    EducationComponent,
+    PlaceholderIfEmptyPipe
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,8 @@ import { EducationComponent } from './education/education.component';
   providers: [
     SkillsService,
     WorkHistoryService,
-    NavbarLinksService
+    NavbarLinksService,
+    EducationService
   ],
   bootstrap: [AppComponent]
 })
