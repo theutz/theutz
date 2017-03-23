@@ -34,7 +34,6 @@ import { HistoryItemComponent } from './history-item/history-item.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    CollapseModule
   ],
   providers: [
     SkillsService,
