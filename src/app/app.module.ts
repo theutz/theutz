@@ -1,3 +1,4 @@
+import { EducationService } from './education.service';
 import { NavbarLinksService } from './navbar-links.service';
 import { WorkHistoryService } from './work-history.service';
 import { AppComponent } from './app.component';
@@ -16,6 +17,8 @@ import { WorkHistoryComponent } from './work-history/work-history.component';
 import { WorkHistoryDatePipe } from './work-history-date.pipe';
 import { CollapseModule } from 'ng2-bootstrap/collapse';
 import { HistoryItemComponent } from './history-item/history-item.component';
+import { EducationComponent } from './education/education.component';
+import { PlaceholderIfEmptyPipe } from './placeholder-if-empty.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,9 @@ import { HistoryItemComponent } from './history-item/history-item.component';
     DoughnutChartCanvasDirective,
     WorkHistoryComponent,
     WorkHistoryDatePipe,
-    HistoryItemComponent
+    HistoryItemComponent,
+    EducationComponent,
+    PlaceholderIfEmptyPipe
   ],
   imports: [
     BrowserModule,
@@ -38,7 +43,8 @@ import { HistoryItemComponent } from './history-item/history-item.component';
   providers: [
     SkillsService,
     WorkHistoryService,
-    NavbarLinksService
+    NavbarLinksService,
+    EducationService
   ],
   bootstrap: [AppComponent]
 })

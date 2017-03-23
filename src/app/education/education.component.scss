@@ -1,0 +1,25 @@
+@import "../../styles.scss";
+:host {
+  @extend .py-4;
+  @extend .d-block;
+}
+
+.container {
+  @extend .d-flex;
+  @extend .flex-column;
+  @extend .justify-content-center;
+}
+
+.title {
+  @extend .my-4;
+  text-align: center;
+}
+
+table {
+  @extend .table;
+  @extend .table-hover;
+  @include media-breakpoint-down(sm) {
+    display: block;
+    overflow-y: hidden;
+  }
+}

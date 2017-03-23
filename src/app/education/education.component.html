@@ -1,0 +1,23 @@
+<div class="container">
+  <h2 class="title">Education</h2>
+  <table class="">
+    <thead>
+      <th>Degree</th>
+      <th>Institution</th>
+      <th>Major</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Graduation</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <th>{{item.degree}}</th>
+        <td>{{item.institution}}</td>
+        <td>{{item.major | placeholderIfEmpty}}</td>
+        <td>{{item.city | placeholderIfEmpty}}</td>
+        <td>{{item.state|placeholderIfEmpty}}</td>
+        <td>{{item.graduationDate|workHistoryDate|placeholderIfEmpty}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

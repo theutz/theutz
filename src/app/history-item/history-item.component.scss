@@ -17,6 +17,7 @@
 .card-header {
   @extend .d-flex;
   @extend .justify-content-start;
+  cursor: pointer;
   &>* {
     @extend .my-0;
   }
