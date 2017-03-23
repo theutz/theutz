@@ -1,0 +1,11 @@
+<div class="card-header" (click)="toggle()">
+  <h4>{{item.company}}</h4>
+  <i class="fa" [ngClass]="{'fa-chevron-down': !collapse, 'fa-chevron-up': collapse }"></i>
+</div>
+<div class="card-block" *ngIf="!collapse" [@collapse]>
+  <h5 class="card-title">{{item.title}}</h5>
+  <div [innerHtml]="item.description"></div>
+</div>
+<div class="card-footer">
+  <small class="text-muted"> {{item.startDate | workHistoryDate}} to {{item.endDate | workHistoryDate}} </small>
+</div>

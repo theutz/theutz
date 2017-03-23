@@ -1,6 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Observable, ReplaySubject } from 'rxjs/Rx';
 
+export interface WorkHistoryItem {
+  company: string;
+  title: string;
+  description?: string;
+  startDate?: Date;
+  endDate?: Date;
+  city?: string;
+  state?: string;
+}
+
 @Injectable()
 export class WorkHistoryService {
   private _src: ReplaySubject<WorkHistoryItem> = new ReplaySubject<WorkHistoryItem>();
@@ -91,14 +101,4 @@ export class WorkHistoryService {
       state: 'Washington'
     }
   ];
-}
-
-export interface WorkHistoryItem {
-  company: string;
-  title: string;
-  description?: string;
-  startDate?: Date;
-  endDate?: Date;
-  city?: string;
-  state?: string;
 }

@@ -1,6 +1,6 @@
-<div class="jumbotron">
-  <h1 [innerHtml]="title | spaceToBr"></h1>
-  <ul class="roles">
+<div [@showImage] class="jumbotron">
+  <h1 [@title]="titleState" [innerHtml]="title | spaceToBr"></h1>
+  <ul [@title]="titleState" class="roles">
     <li *ngFor="let role of roles" class="role" data-divider="&bull;">{{role}}</li>
   </ul>
 </div>

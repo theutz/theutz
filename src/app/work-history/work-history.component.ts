@@ -28,9 +28,4 @@ export class WorkHistoryComponent implements OnInit {
     this.hideAll = !this.hideAll;
   }
 
-  toggleBlock(block: any) {
-    console.log(block);
-    // block.toggle();
-  }
-
 }
