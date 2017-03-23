@@ -16,6 +16,7 @@ import { WorkHistoryComponent } from './work-history/work-history.component';
 import { WorkHistoryDatePipe } from './work-history-date.pipe';
 import { CollapseModule } from 'ng2-bootstrap/collapse';
 import { HistoryItemComponent } from './history-item/history-item.component';
+import { EducationComponent } from './education/education.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HistoryItemComponent } from './history-item/history-item.component';
     DoughnutChartCanvasDirective,
     WorkHistoryComponent,
     WorkHistoryDatePipe,
-    HistoryItemComponent
+    HistoryItemComponent,
+    EducationComponent
   ],
   imports: [
     BrowserModule,
