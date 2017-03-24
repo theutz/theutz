@@ -1,0 +1,25 @@
+@import "../../styles.scss";
+:host {
+  @extend .d-block;
+  @extend .py-4;
+  background-color: darken($white, 5%);
+}
+
+.container {
+  @extend .d-flex;
+  @extend .flex-column;
+  @extend .justify-content-center;
+}
+
+.title {
+  text-align: center;
+}
+
+.examples {
+  @extend .d-flex;
+  @extend .justify-content-around;
+  @extend .flex-wrap;
+  &>* {
+    @extend .my-3;
+  }
+}

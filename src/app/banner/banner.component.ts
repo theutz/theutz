@@ -15,7 +15,7 @@ import { animate, Component, Input, OnInit, state, style, transition, trigger } 
         'filter': 'blur(0px)',
         'opacity': 1,
       })),
-      transition('out <=> in', animate('2s ease-in'))
+      transition('out <=> in', animate('1s ease-in'))
     ]),
     trigger('showImage', [
       transition('void => *', [
@@ -45,7 +45,7 @@ export class BannerComponent implements OnInit {
   }
 
   private _delayAnimation() {
-    Observable.timer(1500)
+    Observable.timer(1000)
       .take(1)
       .subscribe(() => this.titleState = 'in');
   }

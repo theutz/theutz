@@ -1,3 +1,4 @@
+import { PortfolioService } from './portfolio.service';
 import { EducationService } from './education.service';
 import { NavbarLinksService } from './navbar-links.service';
 import { WorkHistoryService } from './work-history.service';
@@ -19,6 +20,10 @@ import { CollapseModule } from 'ng2-bootstrap/collapse';
 import { HistoryItemComponent } from './history-item/history-item.component';
 import { EducationComponent } from './education/education.component';
 import { PlaceholderIfEmptyPipe } from './placeholder-if-empty.pipe';
+import { PortfolioComponent } from './portfolio/portfolio.component';
+import { PortfolioItemComponent } from './portfolio-item/portfolio-item.component';
+import { FooterComponent } from './footer/footer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -33,18 +38,23 @@ import { PlaceholderIfEmptyPipe } from './placeholder-if-empty.pipe';
     WorkHistoryDatePipe,
     HistoryItemComponent,
     EducationComponent,
-    PlaceholderIfEmptyPipe
+    PlaceholderIfEmptyPipe,
+    PortfolioComponent,
+    PortfolioItemComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    BrowserAnimationsModule
   ],
   providers: [
     SkillsService,
     WorkHistoryService,
     NavbarLinksService,
-    EducationService
+    EducationService,
+    PortfolioService
   ],
   bootstrap: [AppComponent]
 })

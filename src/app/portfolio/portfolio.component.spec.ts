@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { DoughnutChartCanvasDirective } from './doughnut-chart-canvas.component';
+import { PortfolioComponent } from './portfolio.component';
 
-describe('DoughnutChartCanvasDirective', () => {
-  let component: DoughnutChartCanvasDirective;
-  let fixture: ComponentFixture<DoughnutChartCanvasDirective>;
+describe('PortfolioComponent', () => {
+  let component: PortfolioComponent;
+  let fixture: ComponentFixture<PortfolioComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [DoughnutChartCanvasDirective]
+      declarations: [ PortfolioComponent ]
     })
-      .compileComponents();
+    .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DoughnutChartCanvasDirective);
+    fixture = TestBed.createComponent(PortfolioComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
