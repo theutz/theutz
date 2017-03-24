@@ -1,5 +1,5 @@
-import { defaultWorkHistoryItems } from './portfolio/defaultWorkHistoryItem';
-import { WorkHistoryItem } from './WorkHistoryItem';
+import { defaultWorkHistoryItems } from '../work-history/default-work-history-items';;
+import { WorkHistoryItem } from '../work-history/work-history-item';
 import { Injectable } from '@angular/core';
 import { Observable, ReplaySubject } from 'rxjs/Rx';
 

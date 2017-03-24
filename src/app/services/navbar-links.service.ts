@@ -1,3 +1,4 @@
+import { NavbarLink } from '../navbar/navbar-link';
 import { Observable, ReplaySubject } from 'rxjs/Rx';
 import { Injectable } from '@angular/core';
 
@@ -13,9 +14,4 @@ export class NavbarLinksService {
   addLink(link: NavbarLink): void {
     this._src.next(link);
   }
-}
-
-export interface NavbarLink {
-  label: string;
-  id: string;
 }

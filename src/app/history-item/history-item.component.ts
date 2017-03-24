@@ -1,13 +1,6 @@
-import { WorkHistoryItem } from '../WorkHistoryItem';
+import { WorkHistoryItem } from '../work-history/work-history-item';
 import { animate, Component, Input, OnInit, state, style, transition, trigger } from '@angular/core';
-
-let collapsedBodyStyle = style({
-  height: 0,
-  padding: 0,
-  opacity: 0,
-  transform: 'scaleY(0)',
-  'transform-origin': '100% 0%'
-});
+import * as aniStyles from './animation-styles';
 
 @Component({
   selector: 'app-history-item',
@@ -15,10 +8,8 @@ let collapsedBodyStyle = style({
   styleUrls: ['./history-item.component.scss'],
   animations: [
     trigger('collapse', [
-      // state('true', style({ opacity: 0, transform: 'scaleY(0)' })),
-      // state('false', style({ opacity: 1, transform: 'scaleY(1)' })),
-      transition('void => *', [collapsedBodyStyle, animate('1s ease')]),
-      transition('* => void', animate('1s ease', collapsedBodyStyle)),
+      transition('void => *', [aniStyles.collapsedBody, animate('1s ease')]),
+      transition('* => void', animate('1s ease', aniStyles.collapsedBody)),
     ])
   ]
 })

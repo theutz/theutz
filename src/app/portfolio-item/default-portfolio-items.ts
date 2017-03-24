@@ -1,4 +1,5 @@
-import { PortfolioItem } from './PortfolioItem';
+import { PortfolioItem } from './portfolio-item';
+
 export const defaultPortfolioItems: PortfolioItem[] = [
     {
         title: 'Reservationista',

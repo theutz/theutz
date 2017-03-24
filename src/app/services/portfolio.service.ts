@@ -1,8 +1,8 @@
 import { NavbarLinksService } from './navbar-links.service';
-import { PortfolioItem } from './PortfolioItem';
+import { PortfolioItem } from '../portfolio-item/portfolio-item';
 import { Observable, ReplaySubject } from 'rxjs/Rx';
 import { Injectable } from '@angular/core';
-import { defaultPortfolioItems } from './defaultPortfolioItems';
+import { defaultPortfolioItems } from '../portfolio-item/default-portfolio-items';
 
 @Injectable()
 export class PortfolioService {

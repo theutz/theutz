@@ -1,7 +1,7 @@
-import { NavbarLinksService } from '../navbar-links.service';
-import { EducationItem } from '../EducationItem';
-import { EducationService } from '../education.service';
+import { NavbarLinksService } from '../services/navbar-links.service';
+import { EducationItem } from './education-item';
 import { Component, OnInit } from '@angular/core';
+import { EducationService } from '../services/education.service';
 
 @Component({
   selector: 'app-education',

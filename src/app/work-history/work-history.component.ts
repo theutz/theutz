@@ -1,6 +1,6 @@
-import { WorkHistoryItem } from '../WorkHistoryItem';
-import { NavbarLinksService } from '../navbar-links.service';
-import { WorkHistoryService } from '../work-history.service';
+import { NavbarLinksService } from '../services/navbar-links.service';
+import { WorkHistoryItem } from './work-history-item';
+import { WorkHistoryService } from '../services/work-history.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

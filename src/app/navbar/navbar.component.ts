@@ -1,4 +1,5 @@
-import { NavbarLink, NavbarLinksService } from '../navbar-links.service';
+import { NavbarLinksService } from '../services/navbar-links.service';
+import { NavbarLink } from './navbar-link';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

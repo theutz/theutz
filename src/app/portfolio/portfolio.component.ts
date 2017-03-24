@@ -1,6 +1,6 @@
-import { PortfolioService } from '../portfolio.service';
-import { PortfolioItem } from '../PortfolioItem';
-import { NavbarLinksService } from '../navbar-links.service';
+import { PortfolioService } from '../services/portfolio.service';
+import { PortfolioItem } from '../portfolio-item/portfolio-item';
+import { NavbarLinksService } from '../services/navbar-links.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

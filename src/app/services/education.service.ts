@@ -1,7 +1,7 @@
-import { EducationItem } from './EducationItem';
+import { EducationItem } from '../education/education-item';
 import { Observable, ReplaySubject } from 'rxjs/Rx';
 import { Injectable } from '@angular/core';
-import { defaultEducationItems } from './defaultEducationItems';
+import { defaultEducationItems } from '../education/default-education-items';
 
 @Injectable()
 export class EducationService {

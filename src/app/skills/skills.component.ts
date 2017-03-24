@@ -1,6 +1,7 @@
-import { NavbarLinksService } from '../navbar-links.service';
+import { NavbarLinksService } from '../services/navbar-links.service';
+import { SkillsService } from '../services/skills.service';
+import { Skill } from './skill';
 import { Component, OnInit } from '@angular/core';
-import { Skill, SkillsService } from '../skills.service';
 
 @Component({
   selector: 'app-skills',
