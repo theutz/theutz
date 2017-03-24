@@ -1,4 +1,4 @@
-import { WorkHistoryItem } from '../work-history.service';
+import { WorkHistoryItem } from '../WorkHistoryItem';
 import { animate, Component, Input, OnInit, state, style, transition, trigger } from '@angular/core';
 
 let collapsedBodyStyle = style({

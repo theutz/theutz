@@ -1,3 +1,4 @@
+import { PortfolioService } from './portfolio.service';
 import { EducationService } from './education.service';
 import { NavbarLinksService } from './navbar-links.service';
 import { WorkHistoryService } from './work-history.service';
@@ -20,6 +21,7 @@ import { HistoryItemComponent } from './history-item/history-item.component';
 import { EducationComponent } from './education/education.component';
 import { PlaceholderIfEmptyPipe } from './placeholder-if-empty.pipe';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { PortfolioItemComponent } from './portfolio-item/portfolio-item.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     HistoryItemComponent,
     EducationComponent,
     PlaceholderIfEmptyPipe,
-    PortfolioComponent
+    PortfolioComponent,
+    PortfolioItemComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,8 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     SkillsService,
     WorkHistoryService,
     NavbarLinksService,
-    EducationService
+    EducationService,
+    PortfolioService
   ],
   bootstrap: [AppComponent]
 })

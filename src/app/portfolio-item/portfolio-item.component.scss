@@ -1,0 +1,15 @@
+@import "../../styles.scss";
+:host {
+  @extend .card;
+  @extend .rounded-0;
+  width: 100%;
+  @include media-breakpoint-up(sm) {
+    width: 49%;
+  }
+}
+
+.card-img-top {
+  @extend .img-fluid;
+}
+
+.card-title {}
