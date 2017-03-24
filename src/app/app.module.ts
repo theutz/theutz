@@ -22,6 +22,7 @@ import { EducationComponent } from './education/education.component';
 import { PlaceholderIfEmptyPipe } from './placeholder-if-empty.pipe';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { PortfolioItemComponent } from './portfolio-item/portfolio-item.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { PortfolioItemComponent } from './portfolio-item/portfolio-item.componen
     EducationComponent,
     PlaceholderIfEmptyPipe,
     PortfolioComponent,
-    PortfolioItemComponent
+    PortfolioItemComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
