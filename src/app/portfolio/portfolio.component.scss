@@ -23,3 +23,10 @@
     @extend .my-3;
   }
 }
+
+app-portfolio-item {
+  width: 100%;
+  @include media-breakpoint-up(lg) {
+    width: 49%;
+  }
+}

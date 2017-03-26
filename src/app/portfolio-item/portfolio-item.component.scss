@@ -2,12 +2,8 @@
 :host {
   @extend .card;
   @extend .d-flex;
-  width: 100%;
   border: none;
   box-shadow: 1px 1px 5px transparentize($gray-dark, 0.6);
-  @include media-breakpoint-up(sm) {
-    width: 49%;
-  }
 }
 
 .card-img {
@@ -17,14 +13,16 @@
 
 .card-img-overlay {
   @extend .d-flex;
-  @extend .align-items-end;
+  @extend .align-content-end;
   @extend .flex-wrap;
   @extend .pt-4;
-  top: auto; // background-color: $white;
-  background-image: linear-gradient(transparentize($white, 1) 0%, transparentize($white, 0.05) 50%);
+  background-image: linear-gradient(transparentize($white, 1) 20%, $white 90%);
 }
 
-.card-title {
+.card-title,
+.card-text,
+.links {
+  @extend .w-100;
   text-shadow: 0 0 5px transparentize($white, 0.2);
 }
 
