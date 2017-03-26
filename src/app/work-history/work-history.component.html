@@ -1,9 +1,6 @@
 <div class="container">
   <h2 [id]="sectionId" class="title">Work History</h2>
-  <div class="visibility">
-    <button class="btn" (click)="toggleAll()">{{hideAll ? 'Show' : 'Hide'}} All &nbsp;<i class="fa" [ngClass]="{'fa-expand': hideAll, 'fa-compress': !hideAll}" aria-hidden="true"></i></button>
-  </div>
   <div class="history">
-    <app-history-item *ngFor="let item of history" [item]="item" [collapse]="hideAll"></app-history-item>
+    <app-history-item *ngFor="let item of history" [item]="item"></app-history-item>
   </div>
 </div>

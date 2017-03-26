@@ -25,8 +25,4 @@ export class WorkHistoryComponent implements OnInit {
       .subscribe(item => this.history.push(item));
   }
 
-  toggleAll() {
-    this.hideAll = !this.hideAll;
-  }
-
 }

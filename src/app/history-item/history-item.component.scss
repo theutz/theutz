@@ -1,7 +1,6 @@
 @import "../../styles.scss";
 :host {
   @extend .my-3;
-  @extend .align-self-start;
   @extend .card;
   width: 100%;
   opacity: 0.9;

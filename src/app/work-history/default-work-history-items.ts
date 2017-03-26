@@ -1,4 +1,4 @@
-import { WorkHistoryItem } from '../WorkHistoryItem';
+import { WorkHistoryItem } from '../work-history/work-history-item';
 export const defaultWorkHistoryItems: WorkHistoryItem[] = [
     {
         company: 'Loews Hotels',
