@@ -48,7 +48,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     FormsModule,
     HttpModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    CollapseModule
   ],
   providers: [
     SkillsService,

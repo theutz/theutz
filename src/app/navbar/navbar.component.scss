@@ -1,27 +1,25 @@
 @import "../../styles.scss";
-nav {
+.navbar {
   @extend .sticky-top;
-  background-image: linear-gradient($brand-dark, darken($brand-dark, 2%));
-  background-color: $brand-dark;
+  @extend .navbar-toggleable-md;
+  @extend .navbar-inverse;
+  background-image: linear-gradient($brand-inverse, darken($brand-inverse, 2%));
 }
 
-ul {
-  @extend .py-3;
-  @extend .list-unstyled;
+.brand {
   @extend .d-flex;
-  @extend .justify-content-around;
+  @extend .justify-content-start;
 }
 
-li {
-  @extend .mx-1;
-  @extend .h5;
-}
-
-a {
-  color: $brand-primary;
-  @include transition($btn-transition);
-  &:hover {
-    color: $white;
-    text-decoration: none;
+.container {
+  @include media-breakpoint-down(md) {
+    margin: 0;
+    &>* {
+      width: 100%;
+    }
   }
+}
+
+.navbar-toggler {
+  @extend .ml-auto;
 }

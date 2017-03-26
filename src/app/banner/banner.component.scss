@@ -31,7 +31,7 @@ h1 {
   font-family: 'Eczar';
   color: $white;
   opacity: 0.85;
-  text-shadow: 3px 3px 4px $brand-dark;
+  text-shadow: 3px 3px 4px $brand-inverse;
   @include media-breakpoint-up(sm) {
     font-size: $display3-size;
   }
@@ -63,7 +63,7 @@ h1 {
 .role {
   @extend .display-4;
   color: darken($white, 20);
-  text-shadow: 1px 1px 2px transparentize($brand-dark, 0.4);
+  text-shadow: 1px 1px 2px transparentize($brand-inverse, 0.4);
   font-size: $font-size-h5;
   &:not(:last-of-type)::after {
     content: attr(data-divider);
