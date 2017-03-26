@@ -1,7 +1,9 @@
-<img *ngIf="!!item.thumbnailUrl" [src]="item.thumbnailUrl" alt="" class="card-img-top">
-<div class="card-block">
+<img (click)="goToProject($event, item.url)" *ngIf="!!item.thumbnailUrl" [src]="item.thumbnailUrl" alt="" class="card-img">
+<div class="card-img-overlay">
   <h4 *ngIf="!!item.title" class="card-title">{{item.title}}</h4>
   <p *ngIf="!!item.description" class="card-text" [innerHtml]="item.description"></p>
-  <a *ngIf="!!item.url" target="_blank" [href]="item.url" class="card-link">Visit Site &nbsp;<i class="fa fa-external-link" aria-hidden="true"></i></a>
-  <a *ngIf="!!item.githubUrl" target="_blank" [href]="item.githubUrl" class="card-link"><i class="fa fa-github" aria-hidden="true"></i>&nbsp; View Code</a>
+  <div class="links">
+    <a *ngIf="!!item.url" target="_blank" [href]="item.url" class="card-link">Visit Site &nbsp;<i class="fa fa-external-link" aria-hidden="true"></i></a>
+    <a *ngIf="!!item.githubUrl" target="_blank" [href]="item.githubUrl" class="card-link"><i class="fa fa-github" aria-hidden="true"></i>&nbsp; View Code</a>
+  </div>
 </div>

@@ -1,4 +1,5 @@
 import { PortfolioService } from './services/portfolio.service';
+import { RouterModule } from '@angular/router';
 import { EducationService } from './services/education.service';
 import { NavbarLinksService } from './services/navbar-links.service';
 import { WorkHistoryService } from './services/work-history.service';

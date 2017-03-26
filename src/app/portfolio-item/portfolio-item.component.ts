@@ -1,6 +1,5 @@
 import { PortfolioItem } from './portfolio-item';
 import { Component, Input, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-portfolio-item',
   templateUrl: './portfolio-item.component.html',
@@ -9,10 +8,13 @@ import { Component, Input, OnInit } from '@angular/core';
 export class PortfolioItemComponent implements OnInit {
   @Input() item: PortfolioItem;
 
-  constructor() { }
+  constructor(
+  ) { }
 
-  ngOnInit() {
+  ngOnInit() { }
 
+  goToProject(event: Event, url: string) {
+    event.preventDefault();
+    window.open(url, '_blank');
   }
-
 }

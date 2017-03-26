@@ -1,15 +1,33 @@
 @import "../../styles.scss";
 :host {
   @extend .card;
-  @extend .rounded-0;
+  @extend .d-flex;
   width: 100%;
+  border: none;
+  box-shadow: 1px 1px 5px transparentize($gray-dark, 0.6);
   @include media-breakpoint-up(sm) {
     width: 49%;
   }
 }
 
-.card-img-top {
+.card-img {
   @extend .img-fluid;
+  cursor: pointer;
 }
 
-.card-title {}
+.card-img-overlay {
+  @extend .d-flex;
+  @extend .align-items-end;
+  @extend .flex-wrap;
+  @extend .pt-4;
+  top: auto; // background-color: $white;
+  background-image: linear-gradient(transparentize($white, 1) 0%, transparentize($white, 0.05) 50%);
+}
+
+.card-title {
+  text-shadow: 0 0 5px transparentize($white, 0.2);
+}
+
+.links {
+  @extend .w-100;
+}
