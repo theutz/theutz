@@ -1,3 +1,4 @@
+import { BannerComponent } from '../banner/banner.component';
 import { PortfolioComponent } from '../portfolio/portfolio.component';
 import { EducationComponent } from '../education/education.component';
 import { WorkHistoryComponent } from '../work-history/work-history.component';
@@ -11,12 +12,12 @@ import { CommonModule } from '@angular/common';
   imports: [
     CommonModule,
     RouterModule.forRoot([
-      { path: 'skills', component: SkillsComponent },
+      { path: 'home', component: BannerComponent },
+      { path: 'skills', component: SkillsComponent, },
       { path: 'work-history', component: WorkHistoryComponent },
       { path: 'education', component: EducationComponent },
       { path: 'portfolio', component: PortfolioComponent },
-      { path: '', component: SkillsComponent, pathMatch: 'full' },
-      { path: '**', redirectTo: '/' }
+      { path: '', redirectTo: '/home', pathMatch: 'full' }
     ])
   ],
   declarations: [],

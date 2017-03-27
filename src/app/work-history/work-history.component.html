@@ -1,6 +1,11 @@
 <div class="container">
   <h2 [id]="sectionId" class="title">Work History</h2>
+  <div class="d-flex justify-content-center">
+    <button class="btn btn-primary" (click)="$event.preventDefault(); collapseAll = !collapseAll">{{collapseAll ? 'Show' : 'Hide'}} Details &nbsp;
+      <i class="fa" [ngClass]="{'fa-expand': collapseAll, 'fa-compress': !collapseAll }" aria-hidden="true"></i>
+    </button>
+  </div>
   <div class="history">
-    <app-history-item *ngFor="let item of history" [item]="item"></app-history-item>
+    <app-history-item *ngFor="let item of history" [item]="item" [collapseBody]="collapseAll"></app-history-item>
   </div>
 </div>

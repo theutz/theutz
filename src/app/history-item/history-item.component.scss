@@ -3,8 +3,7 @@
   @extend .my-3;
   @extend .card;
   width: 100%;
-  opacity: 0.9;
-  box-shadow: 1px 1px 1px $brand-inverse;
+  box-shadow: 1px 1px 5px transparentize($gray-dark, 0.6);
   @include media-breakpoint-up(sm) {
     width: 48%;
   }

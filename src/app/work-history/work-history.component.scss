@@ -1,9 +1,6 @@
 @import "../../styles.scss";
 :host {
-  @extend .d-block;
-  background-image: radial-gradient($brand-inverse, darken($brand-inverse, 5%));
-  background-repeat: no-repeat;
-  box-shadow: inset 0 3px 3px 0 $brand-inverse;
+  @extend .d-block; // height: 100vh;
 }
 
 .container {
@@ -15,9 +12,6 @@
 .title {
   @extend .display-4;
   text-align: center;
-  color: $white;
-  text-shadow: 1px 1px 3px $brand-inverse;
-  opacity: 0.85;
 }
 
 .visibility {

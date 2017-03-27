@@ -1,20 +1,8 @@
+body {
+  padding-bottom: 100px;
+}
+
 h2 {
   @extend .display-4;
   @extend .my-4;
-}
-
-app-root * {
-  animation-duration: 1s;
-  opacity: 0;
-  animation-name: fadeIn;
-  animation-fill-mode: forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }

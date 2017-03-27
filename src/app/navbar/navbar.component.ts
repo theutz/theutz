@@ -13,7 +13,7 @@ export class NavbarComponent implements OnInit {
 
   @HostListener('window:click', ['$event'])
   onWindowClick(event) {
-    if (event.target.id !== 'navbar-toggler') {
+    if (event.target.id !== 'navbar-toggler' && !this.isCollapsed) {
       this.toggleNavbar();
     }
   }
@@ -31,8 +31,8 @@ export class NavbarComponent implements OnInit {
     this.isCollapsed = !this.isCollapsed;
   }
 
-
   private _setLinks() {
+    this.links.push({ title: 'Home', route: '/home' });
     this.links.push({ title: 'Skills', route: '/skills' });
     this.links.push({ title: 'Work History', route: '/work-history' });
     this.links.push({ title: 'Education', route: '/education' });
