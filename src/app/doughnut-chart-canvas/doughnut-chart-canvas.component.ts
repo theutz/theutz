@@ -1,3 +1,4 @@
+import * as ChartJs from 'chart.js';
 import { Component, Directive, ElementRef, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import * as tinycolor from 'tinycolor2';
 
@@ -8,15 +9,16 @@ declare var Chart: any;
 export class DoughnutChartCanvasDirective implements OnDestroy, OnChanges, OnInit {
   @Input() level: number;
   @Input() cutoutPercentage = 70;
+  /* tslint:disable-next-line:no-input-rename */
   @Input('color') baseColor: string;
   @Input() label: string;
 
   ctx: any;
-  chart: any;
+  chart: Chart;
   initFlag = false;
 
   constructor(
-    private element: ElementRef
+    private _element: ElementRef,
   ) { }
 
   ngOnInit() {
@@ -24,7 +26,7 @@ export class DoughnutChartCanvasDirective implements OnDestroy, OnChanges, OnIni
       throw new Error(`Color provided (${this.baseColor}) is invalid`);
     }
 
-    this.ctx = this.element.nativeElement.getContext('2d');
+    this.ctx = this._element.nativeElement.getContext('2d');
     this.initFlag = true;
 
     if (this.level) {
@@ -44,7 +46,7 @@ export class DoughnutChartCanvasDirective implements OnDestroy, OnChanges, OnIni
     }
   }
 
-  private _getConfig(): ChartConfig {
+  private _getConfig(): any {
     return {
       type: 'doughnut',
       data: {
@@ -58,9 +60,10 @@ export class DoughnutChartCanvasDirective implements OnDestroy, OnChanges, OnIni
         ]
       },
       options: {
+        deferred: { enabled: true, yOffset: '25%', delay: 500 },
+        tooltips: { enabled: false },
         legend: { display: false },
         cutoutPercentage: this.cutoutPercentage,
-        animation: { animateRotate: true, animateScale: false },
       }
     };
   }
@@ -86,36 +89,4 @@ export class DoughnutChartCanvasDirective implements OnDestroy, OnChanges, OnIni
 
   ngOnChanges(changes: SimpleChanges) { }
 
-}
-
-interface AnimationOptions {
-  animateRotate?: boolean;
-  animateScale?: boolean;
-}
-
-interface LegendOptions {
-  display?: boolean;
-}
-
-interface ChartOptions {
-  legend?: LegendOptions;
-  cutoutPercentage?: number;
-  animation?: AnimationOptions;
-}
-
-interface ChartDataset {
-  data: number[];
-  backgroundColor?: string[];
-  hoverBackgroundColor?: string[];
-}
-
-interface ChartData {
-  labels?: string[];
-  datasets: ChartDataset[];
-}
-
-interface ChartConfig {
-  type: string;
-  data: ChartData;
-  options: ChartOptions;
 }

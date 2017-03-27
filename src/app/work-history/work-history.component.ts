@@ -1,36 +1,33 @@
-import { NavbarLinksService } from '../navbar-links.service';
-import { WorkHistoryItem, WorkHistoryService } from '../work-history.service';
-import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs/Rx';
+import { WorkHistoryItem } from './work-history-item';
+import { WorkHistoryService } from '../services/work-history.service';
+import { Component, OnInit, OnDestroy, HostBinding } from '@angular/core';
+import * as animations from '../animations';
 
 @Component({
   selector: 'app-work-history',
   templateUrl: './work-history.component.html',
-  styleUrls: ['./work-history.component.scss']
+  styleUrls: ['./work-history.component.scss'],
+  animations: [animations.componentTransition]
 })
-export class WorkHistoryComponent implements OnInit {
+export class WorkHistoryComponent implements OnInit, OnDestroy {
+  @HostBinding('@routeAnimation') routeAnimation = 'true';
   sectionId = 'work-history';
   history: WorkHistoryItem[] = [];
-  hideAll = true;
+  collapseAll = true;
+
+  private _historySub: Subscription;
 
   constructor(
     private _historyService: WorkHistoryService,
-    private _navLinkService: NavbarLinksService
   ) { }
 
   ngOnInit() {
-    this._navLinkService
-      .addLink({ label: 'History', id: this.sectionId });
-    this._historyService.history$
+    this._historySub = this._historyService.history$
       .subscribe(item => this.history.push(item));
   }
 
-  toggleAll() {
-    this.hideAll = !this.hideAll;
+  ngOnDestroy() {
+    this._historySub.unsubscribe();
   }
-
-  toggleBlock(block: any) {
-    console.log(block);
-    // block.toggle();
-  }
-
 }

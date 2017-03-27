@@ -1,0 +1,31 @@
+@import "../../styles.scss";
+:host {
+  @extend .card;
+  @extend .d-flex;
+  border: none;
+  box-shadow: 1px 1px 5px transparentize($gray-dark, 0.6);
+}
+
+.card-img {
+  @extend .img-fluid;
+  cursor: pointer;
+}
+
+.card-img-overlay {
+  @extend .d-flex;
+  @extend .align-content-end;
+  @extend .flex-wrap;
+  @extend .pt-4;
+  background-image: linear-gradient(transparentize($white, 1) 20%, $white 90%);
+}
+
+.card-title,
+.card-text,
+.links {
+  @extend .w-100;
+  text-shadow: 0 0 5px transparentize($white, 0.2);
+}
+
+.links {
+  @extend .w-100;
+}

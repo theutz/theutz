@@ -1,0 +1,36 @@
+@import "../../styles.scss";
+:host {
+  @extend .d-block;
+  @extend .py-2;
+  @extend .fixed-bottom;
+  background-color: $brand-inverse;
+}
+
+.container {
+  @extend .d-flex;
+  @extend .flex-wrap;
+  @extend .justify-content-around;
+  text-align: center;
+}
+
+.profiles {
+  @extend .d-flex;
+  @extend .justify-content-center;
+  @extend .w-100;
+  &>a {
+    @extend .m-2;
+    font-size: $font-size-h2;
+    color: $white;
+    &:hover,
+    &:hover::before {
+      text-decoration: none;
+      color: darken($white, 5%);
+    }
+  }
+}
+
+.copyright {
+  @extend .text-muted;
+  @extend .w-100;
+  @extend .my-2;
+}

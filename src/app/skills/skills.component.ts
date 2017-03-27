@@ -1,26 +1,36 @@
-import { NavbarLinksService } from '../navbar-links.service';
-import { Component, OnInit } from '@angular/core';
-import { Skill, SkillsService } from '../skills.service';
+import { HostBinding } from '@angular/core';
+import * as animations from '../animations';
+import { Subscription } from 'rxjs/Rx';
+import { SkillsService } from '../services/skills.service';
+import { Skill } from './skill';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
-  styleUrls: ['./skills.component.scss']
+  styleUrls: ['./skills.component.scss'],
+  animations: [animations.componentTransition]
 })
-export class SkillsComponent implements OnInit {
+export class SkillsComponent implements OnInit, OnDestroy {
+  @HostBinding('@routeAnimation') routeAnimation = 'true';
+  @HostBinding('style.display') display = 'block';
+  // @HostBinding('style.position') position = 'absolute';
   chartColor = '#709795';
   skills: Skill[] = [];
   sectionId = 'skills';
 
+  private _skilSub: Subscription;
+
   constructor(
     private _skillsService: SkillsService,
-    private _navLinkService: NavbarLinksService
   ) { }
 
   ngOnInit() {
-    this._navLinkService.addLink({ label: 'Skills', id: this.sectionId });
-    this._skillsService.skills$
+    this._skilSub = this._skillsService.skills$
       .subscribe(skill => this.skills.push(skill));
   }
 
+  ngOnDestroy() {
+    this._skilSub.unsubscribe();
+  }
 }

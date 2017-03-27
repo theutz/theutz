@@ -1,10 +1,11 @@
 @import "../../styles.scss";
 :host {
   @extend .d-block;
+  @extend .my-4;
 }
 
 .container {
-  @extend .py-4;
+  @extend .py-2;
 }
 
 .title {

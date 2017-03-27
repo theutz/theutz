@@ -21,10 +21,11 @@
       "styles.scss"
     ],
     "scripts": [
-      "../node_modules/chart.js/dist/Chart.bundle.js"
+      "../node_modules/chart.js/dist/Chart.bundle.js",
+      "../node_modules/chartjs-plugin-deferred/dist/chartjs-plugin-deferred.js"
     ],
+    "environmentSource": "environments/environtment.ts",
     "environments": {
-      "source": "environments/environment.ts",
       "dev": "environments/environment.ts",
       "prod": "environments/environment.prod.ts"
     }
