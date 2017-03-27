@@ -2,6 +2,7 @@
 :host {
   @extend .d-block;
   @extend .py-2;
+  @extend .fixed-bottom;
   background-color: $brand-inverse;
 }
 

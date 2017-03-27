@@ -34,6 +34,7 @@
     "tinycolor2": "^1.4.1",
     "ts-helpers": "^1.1.1",
     "typescript": "^2.2.1",
+    "web-animations-js": "^2.2.2",
     "zone.js": "^0.7.2"
   },
   "devDependencies": {

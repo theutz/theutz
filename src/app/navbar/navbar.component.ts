@@ -11,16 +11,26 @@ export class NavbarComponent implements OnInit {
   isCollapsed = true;
   links: Array<{ title: string, route: string }> = [];
 
+  @HostListener('window:click', ['$event'])
+  onWindowClick(event) {
+    if (event.target.id !== 'navbar-toggler') {
+      this.toggleNavbar();
+    }
+  }
+
   constructor() { }
 
   ngOnInit() {
     this._setLinks();
   }
 
-  toggleNavbar(event: Event): void {
-    event.preventDefault();
+  toggleNavbar(event?: Event): void {
+    if (!!event) {
+      event.preventDefault();
+    }
     this.isCollapsed = !this.isCollapsed;
   }
+
 
   private _setLinks() {
     this.links.push({ title: 'Skills', route: '/skills' });
