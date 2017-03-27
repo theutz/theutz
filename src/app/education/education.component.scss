@@ -19,7 +19,12 @@ table {
   @extend .table;
   @extend .table-hover;
   @include media-breakpoint-down(sm) {
+    font-size: $font-size-base * 0.9;
     display: block;
     overflow-y: hidden;
+    & th,
+    & td {
+      padding: $table-sm-cell-padding;
+    }
   }
 }
