@@ -1,15 +1,15 @@
 <header class="navbar">
   <nav class="container">
     <div class="brand">
-      <a href="#" class="navbar-brand">Michael Utz</a>
+      <a routerLink="/" class="navbar-brand">Michael Utz</a>
       <button (click)="toggleNavbar($event)" class="navbar-toggler">
         <span id="navbar-toggler" class="navbar-toggler-icon"></span>
       </button>
     </div>
     <div [collapse]="isCollapsed" class="navbar-collapse">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item" *ngFor="let item of links">
-          <a class="nav-link" [href]="'#' + item.id">{{item.label}}</a>
+        <li class="nav-item" routerLinkActive="active" *ngFor="let link of links">
+          <a class="nav-link" [routerLink]="link.route">{{link.title}}</a>
         </li>
       </ul>
     </div>

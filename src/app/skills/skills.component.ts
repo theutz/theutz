@@ -1,27 +1,30 @@
-import { NavbarLinksService } from '../services/navbar-links.service';
+import { Subscription } from 'rxjs/Rx';
 import { SkillsService } from '../services/skills.service';
 import { Skill } from './skill';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.scss']
 })
-export class SkillsComponent implements OnInit {
+export class SkillsComponent implements OnInit, OnDestroy {
   chartColor = '#709795';
   skills: Skill[] = [];
   sectionId = 'skills';
 
+  private _skilSub: Subscription;
+
   constructor(
     private _skillsService: SkillsService,
-    private _navLinkService: NavbarLinksService
   ) { }
 
   ngOnInit() {
-    this._navLinkService.addLink({ label: 'Skills', id: this.sectionId });
-    this._skillsService.skills$
+    this._skilSub = this._skillsService.skills$
       .subscribe(skill => this.skills.push(skill));
   }
 
+  ngOnDestroy() {
+    this._skilSub.unsubscribe();
+  }
 }

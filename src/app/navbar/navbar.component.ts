@@ -1,7 +1,5 @@
 import { Observable } from 'rxjs/Rx';
 import { CollapseDirective } from 'ng2-bootstrap/collapse';
-import { NavbarLinksService } from '../services/navbar-links.service';
-import { NavbarLink } from './navbar-link';
 import { HostListener, Component, OnInit, ElementRef, Renderer2 } from '@angular/core';
 
 @Component({
@@ -11,14 +9,12 @@ import { HostListener, Component, OnInit, ElementRef, Renderer2 } from '@angular
 })
 export class NavbarComponent implements OnInit {
   isCollapsed = true;
-  links: NavbarLink[] = [];
+  links: Array<{ title: string, route: string }> = [];
 
-  constructor(
-    private _navLinkService: NavbarLinksService,
-  ) { }
+  constructor() { }
 
   ngOnInit() {
-    this._navLinkService.links$.subscribe(link => this.links.push(link));
+    this._setLinks();
   }
 
   toggleNavbar(event: Event): void {
@@ -26,5 +22,11 @@ export class NavbarComponent implements OnInit {
     this.isCollapsed = !this.isCollapsed;
   }
 
+  private _setLinks() {
+    this.links.push({ title: 'Skills', route: '/skills' });
+    this.links.push({ title: 'Work History', route: '/work-history' });
+    this.links.push({ title: 'Education', route: '/education' });
+    this.links.push({ title: 'Portfolio', route: '/portfolio' });
+  }
 }
 

@@ -1,7 +1,7 @@
+import { AppRoutingModule } from './app-routing/app-routing.module';
 import { PortfolioService } from './services/portfolio.service';
 import { RouterModule } from '@angular/router';
 import { EducationService } from './services/education.service';
-import { NavbarLinksService } from './services/navbar-links.service';
 import { WorkHistoryService } from './services/work-history.service';
 import { AppComponent } from './app.component';
 import { BannerComponent } from './banner/banner.component';
@@ -49,12 +49,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     HttpModule,
     BrowserAnimationsModule,
-    CollapseModule
+    CollapseModule,
+    AppRoutingModule
   ],
   providers: [
     SkillsService,
     WorkHistoryService,
-    NavbarLinksService,
     EducationService,
     PortfolioService
   ],
