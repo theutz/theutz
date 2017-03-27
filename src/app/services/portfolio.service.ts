@@ -1,4 +1,3 @@
-import { NavbarLinksService } from './navbar-links.service';
 import { PortfolioItem } from '../portfolio-item/portfolio-item';
 import { Observable, ReplaySubject } from 'rxjs/Rx';
 import { Injectable } from '@angular/core';
