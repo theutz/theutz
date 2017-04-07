@@ -2,5 +2,9 @@
   <div class="profiles">
     <a *ngFor="let profile of profiles" [title]="profile.title" target="_blank" [href]="profile.url" class="fa fa-{{profile.icon}}"></a>
   </div>
-  <small class="copyright">Copyright &copy; {{thisYear}} Michael Utz</small>
+  <small class="copyright">
+    Copyright &copy; {{thisYear}} Michael Utz. 
+    <span class="hidden-md-down">Made with Angular 2.</span>
+    <img src="/assets/angular.png" alt="Angular 2" />
+    </small>
 </div>
