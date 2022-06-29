@@ -62,6 +62,9 @@ class User extends Authenticatable implements FilamentUser
 
     public function canAccessFilament(): bool
     {
+        if (config('app.env') === 'local') {
+            return true;
+        }
         return str_ends_with($this->email, '@theutz.com') && $this->hasVerifiedEmail();
     }
 }
