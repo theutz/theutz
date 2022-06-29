@@ -1,5 +1,10 @@
+import fs from 'fs'
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
+import { homedir } from 'os';
+import { resolve } from 'path';
+
+let host = 'theutz.test';
 
 export default defineConfig({
     plugins: [
@@ -8,4 +13,22 @@ export default defineConfig({
             'resources/js/app.js',
         ]),
     ],
+    server: detectServerConfig(host),
 });
+
+function detectServerConfig(host) {
+    let keyPath = resolve(homedir(), `.config/valet/certificates/${host}.key`);
+    let crtPath = resolve(homedir(), `.config/valet/certificates/${host}.crt`);
+
+    if (!fs.existsSync(keyPath)) return {};
+    if (!fs.existsSync(crtPath)) return {};
+
+    return {
+        hmr: { host },
+        host,
+        https: {
+            key: fs.readFileSync(keyPath),
+            cert: fs.readFileSync(crtPath)
+        }
+    }
+}
