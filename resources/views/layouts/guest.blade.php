@@ -8,7 +8,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         {{ $meta }}
 
-        <title>{{ config('app.name', 'theutz.com') }}</title>
+        <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="anonymous" />
