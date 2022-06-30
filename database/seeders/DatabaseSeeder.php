@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             ->create([
                 'name' => config('seeders.user.name'),
                 'email' => config('seeders.user.email'),
+                'password' => bcrypt(config('seeders.user.password'))
             ]);
     }
 }
