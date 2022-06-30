@@ -21,7 +21,7 @@
     <button x-show="!isExpanded"
             type="button"
             class="hidden mt-2 text-sm font-bold leading-6 text-pink-500 hover:text-pink-700 active:text-pink-900 lg:inline-block"
-            @="isExpanded = true">
+            @click="isExpanded = true">
         Show more
     </button>
 </section>
