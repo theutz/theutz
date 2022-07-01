@@ -13,6 +13,7 @@ class Globals extends Settings
     public string $instagram;
     public string $twitter;
     public string $linkedin;
+    public string $email;
 
     public static function group(): string
     {
