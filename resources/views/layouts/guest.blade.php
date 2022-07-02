@@ -3,26 +3,23 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1">
-    <meta name="csrf-token"
-          content="{{ csrf_token() }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
-    <link rel="preconnect"
-          href="https://cdn.fontshare.com"
-          crossOrigin="anonymous" />
-    <link rel="stylesheet"
-          href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap" />
+    <link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="anonymous" />
+    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap" />
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body>
-    {{ $slot }}
+    <x-layout>
+        {{ $slot }}
+    </x-layout>
 </body>
 
 </html>
