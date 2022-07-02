@@ -18,7 +18,8 @@ class ManageGlobals extends SettingsPage
             Forms\Components\Card::make()->schema([
                 Forms\Components\TextInput::make('title')->required(),
                 Forms\Components\MarkdownEditor::make('description')->required(),
-                Forms\Components\MarkdownEditor::make('bio')->required()
+                Forms\Components\MarkdownEditor::make('bio')->required(),
+                Forms\Components\FileUpload::make('logo')->required()
             ]),
             Forms\Components\Card::make()->schema([
                 Forms\Components\TextInput::make('facebook')->url()->required(),

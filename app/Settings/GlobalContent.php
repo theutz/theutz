@@ -9,6 +9,7 @@ class Globals extends Settings
     public string $title;
     public string $description;
     public string $bio;
+    public string $logo;
     public string $facebook;
     public string $instagram;
     public string $twitter;
