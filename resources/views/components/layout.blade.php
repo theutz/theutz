@@ -19,7 +19,9 @@
                 <a href="/">{{ $globals->title }}</a>
             </p>
             <p class="mt-3 text-lg font-medium leading-8 text-slate-700">
+                <x-markdown>
                 {{ $globals->description }}
+                </x-markdown>
             </p>
         </div>
         <x-sections.about class="hidden mt-12 lg:block" />
