@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use App\Settings\Globals;
+use Blade;
+use Filament\Facades\Filament;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -15,7 +17,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        Filament::registerRenderHook('head.end', fn ():string => Blade::render('<link rel="shortcut icon" href="{{ asset($globals->logo) }}" />'));
     }
 
     /**
