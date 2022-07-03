@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use App\Settings\Globals;
 use Blade;
 use Filament\Facades\Filament;
 use Illuminate\Support\Facades\View;
@@ -29,8 +28,7 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot(Globals $globals)
+    public function boot()
     {
-        View::share('globals', $globals);
     }
 }
