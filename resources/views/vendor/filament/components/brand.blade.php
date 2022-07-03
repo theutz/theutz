@@ -1,6 +1,6 @@
 <div class="flex items-center gap-2">
-    <img src="{{ Storage::url($globals->logo) }}" alt="{{ $globals->title }}" class="h-8 w-auto" />
+    <img src="{{ Storage::url(config('site.logo')) }}" alt="{{ config('site.title') }}" class="h-8 w-auto" />
     <h1>
-        {{ $globals->title }}
+        {{ config('site.title') }}
     </h1>
 </div>

@@ -17,7 +17,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        Filament::registerRenderHook('head.end', fn (): string => Blade::render('<link rel="shortcut icon" href="{{ Storage::url($globals->logo) }}" />'));
+        Filament::registerRenderHook('head.end', fn (): string => Blade::render(
+            <<<END
+                <link rel="shortcut icon" href="{{ Storage::url(config('site.logo')) }}" />
+            END
+        ));
     }
 
     /**

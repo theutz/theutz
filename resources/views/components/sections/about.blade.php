@@ -7,7 +7,7 @@
         <span class="ml-2.5">About</span>
     </h2>
     <p class="mt-2 text-base leading-7 text-slate-700" :class="{ 'lg:line-clamp-4': !isExpanded }">
-        {{ $globals->bio }}
+        {{ config('site.bio') }}
     </p>
     <button x-show="!isExpanded" type="button" class="hidden mt-2 text-sm font-bold leading-6 text-pink-500 hover:text-pink-700 active:text-pink-900 lg:inline-block" @click="isExpanded = true">
         Show more

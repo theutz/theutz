@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ $globals->title }}</title>
-    <link rel="shortcut icon" href="{{ Storage::url($globals->logo) }}" />
+    <title>{{ config('site.title') }}</title>
+    <link rel="shortcut icon" href="{{ Storage::url(config('site.logo')) }}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="anonymous" />
@@ -33,17 +33,17 @@
         </div>
         <div class="relative z-10 px-4 pt-10 pb-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:min-h-full lg:flex-auto lg:border-x lg:border-slate-200 lg:py-12 lg:px-8 xl:px-12">
             <a href="/" class="relative block w-48 mx-auto overflow-hidden rounded-lg shadow-xl bg-slate-200 shadow-slate-200 sm:w-64 sm:rounded-xl lg:w-auto lg:rounded-2xl" aria-label="Homepage">
-                <img src="{{ Storage::url($globals->logo) }}" alt="" layout="responsive" sizes="(min-width: 1024px) 20rem, (min-width: 640px) 16rem, 12rem" priority />
+                <img src="{{ Storage::url(config('site.logo')) }}" alt="" layout="responsive" sizes="(min-width: 1024px) 20rem, (min-width: 640px) 16rem, 12rem" priority />
                 <div class="absolute inset-0 rounded-lg ring-1 ring-inset ring-black/10 sm:rounded-xl lg:rounded-2xl"></div>
             </a>
 
             <div class="mt-10 text-center lg:mt-12 lg:text-left">
                 <p class="text-xl font-bold text-slate-900">
-                    <a href="/">{{ $globals->title }}</a>
+                    <a href="/">{{ config('site.title') }}</a>
                 </p>
                 <p class="mt-3 text-lg font-medium leading-8 text-slate-700">
                     <x-markdown>
-                        {{ $globals->description }}
+                        {{ config('site.description') }}
                     </x-markdown>
                 </p>
             </div>
@@ -59,28 +59,28 @@
                 <div class="h-px bg-gradient-to-r from-slate-200/0 via-slate-200 to-slate-200/0 lg:hidden"></div>
                 <ul class="flex justify-center mt-4 space-x-10 text-base font-medium leading-7 text-slate-700 sm:space-x-8 lg:block lg:space-x-0 lg:space-y-4">
                     <li class="flex">
-                        <a href="{{ $globals->facebook }}" class="flex items-center group">
+                        <a href="{{ config('site.links.facebook') }}" class="flex items-center group">
                             <x-simpleicon-facebook class="w-8 h-8 fill-slate-400 group-hover:fill-slate-600" />
                             <span class="sr-only sm:hidden">Facebook</span>
                             <span class="hidden sm:ml-3 sm:block">Facebook</span>
                         </a>
                     </li>
                     <li class="flex">
-                        <a href="{{ $globals->twitter }}" class="flex items-center group">
+                        <a href="{{ config('site.links.twitter') }}" class="flex items-center group">
                             <x-simpleicon-twitter class="w-8 h-8 fill-slate-400 group-hover:fill-slate-600" />
                             <span class="sr-only sm:hidden">Twitter</span>
                             <span class="hidden sm:ml-3 sm:block">Twitter</span>
                         </a>
                     </li>
                     <li class="flex">
-                        <a href="{{ $globals->linkedin }}" class="flex items-center group">
+                        <a href="{{ config('site.links.linkedin') }}" class="flex items-center group">
                             <x-simpleicon-linkedin class="w-8 h-8 fill-slate-400 group-hover:fill-slate-600" />
                             <span class="sr-only sm:hidden">Linkedin</span>
                             <span class="hidden sm:ml-3 sm:block">Linkedin</span>
                         </a>
                     </li>
                     <li class="flex">
-                        <a href="{{ $globals->instagram }}" class="flex items-center group">
+                        <a href="{{ config('site.links.instagram') }}" class="flex items-center group">
                             <x-simpleicon-instagram class="w-8 h-8 fill-slate-400 group-hover:fill-slate-600" />
                             <span class="sr-only sm:hidden">Instagram</span>
                             <span class="hidden sm:ml-3 sm:block">Instagram</span>
@@ -113,9 +113,6 @@
                 <span class="ml-6">USA</span>
             </div>
         </div>
-    </div>
-    <div class="fixed inset-x-0 bottom-0 right-0 z-10 rounded-lg lg:left-112 xl:left-120">
-        <AudioPlayer />
     </div>
 </body>
 
