@@ -13,7 +13,7 @@
     </div>
     <div class="relative z-10 px-4 pt-10 pb-4 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:min-h-full lg:flex-auto lg:border-x lg:border-slate-200 lg:py-12 lg:px-8 xl:px-12">
         <a href="/" class="relative block w-48 mx-auto overflow-hidden rounded-lg shadow-xl bg-slate-200 shadow-slate-200 sm:w-64 sm:rounded-xl lg:w-auto lg:rounded-2xl" aria-label="Homepage">
-            <img src="{{ asset($globals->logo) }}" alt="" layout="responsive" sizes="(min-width: 1024px) 20rem, (min-width: 640px) 16rem, 12rem" priority />
+            <img src="{{ Storage::url($globals->logo) }}" alt="" layout="responsive" sizes="(min-width: 1024px) 20rem, (min-width: 640px) 16rem, 12rem" priority />
             <div class="absolute inset-0 rounded-lg ring-1 ring-inset ring-black/10 sm:rounded-xl lg:rounded-2xl"></div>
         </a>
 

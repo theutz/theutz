@@ -7,7 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ $globals->title }}</title>
-    <link rel="shortcut icon" href="{{ $globals->logo }}" />
+    <link rel="shortcut icon" href="{{ Storage::url($globals->logo) }}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="anonymous" />
