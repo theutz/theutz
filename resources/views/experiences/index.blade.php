@@ -1,7 +1,7 @@
 <x-guest-layout>
-    <x-slot:header>
+    <x-slot:heading>
         {{ __('Experience') }}
-    </x-slot:header>
+    </x-slot:heading>
 
     @foreach($items as $item)
         @php

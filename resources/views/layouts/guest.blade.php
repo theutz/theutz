@@ -34,7 +34,10 @@
                     </x-container>
                 @endisset
 
-                <div class="divide-y divide-slate-100 sm:mt-4 lg:mt-8 lg:border-t lg:border-slate-100">
+                <div @class([
+                    "divide-y divide-slate-100 sm:mt-4 lg:mt-8",
+                    "lg:border-t lg:border-slate-100" => isset($heading)
+                ])>
                     {{ $slot }}
                 </div>
             </div>
