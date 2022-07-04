@@ -12,15 +12,32 @@ class Experience extends Model
     use HasFactory;
     use Orbital;
 
-    protected $fillable = ['title', 'slug', 'published_at'];
+    protected $fillable = [
+        'title',
+        'slug',
+        'published_at',
+        'start_date',
+        'end_date',
+        'company_name',
+        'city_state',
+        'country',
+        'content'
+    ];
 
-    public static function schema(Blueprint $table) {
+    protected $casts = [
+        'published_at' => 'datetime',
+        'start_date' => 'datetime',
+        'end_date' => 'datetime'
+    ];
+
+    public static function schema(Blueprint $table)
+    {
         $table->string('title');
         $table->string('slug')->primary();
         $table->string('company_name')->nullable();
         $table->string('job_title')->nullable();
-        $table->date('start_date')->nullable();
-        $table->date('end_date')->nullable();
+        $table->timestamp('start_date')->nullable();
+        $table->timestamp('end_date')->nullable();
         $table->string('city_state')->nullable();
         $table->string('country')->nullable();
         $table->timestamp('published_at');

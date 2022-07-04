@@ -1,8 +1,24 @@
 <x-guest-layout>
     <x-slot:title>
-        Episodes
+        {{ __('Experience') }}
     </x-slot:title>
 
-    @each('components.episode-entry', $episodes, 'episode')
+    @foreach($items as $item)
+        <x-entry :title="$item->title" :slug="$item->id">
+            <x-slot:time>
+                {{ $item->start_date->isoFormat('MMM Y') }}
+                -
+                @isset ($item->end_date)
+                    {{ $item->end_date->isoFormat('MMM Y') }}
+                @else
+                    {{ __('Current') }}
+                @endisset
+                    |
+                    {{ $item->start_date->longAbsoluteDiffForHumans($item->end_date) }}
+            </x-slot:time>
+
+            {{ $item->content }}
+        </x-entry>
+    @endforeach
 
 </x-guest-layout>
