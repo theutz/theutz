@@ -60,11 +60,14 @@ class ExperienceResource extends Resource
                             TextInput::make('city_state')->label('City & State'),
                             TextInput::make('country'),
                         ]),
-                        MarkdownEditor::make('content')->label('Description')->columnSpan(2),
                     ]),
                     Card::make()->columnSpan(1)->schema([
                         TextInput::make('slug')->required(),
                         DatePicker::make('published_at')->default(now())->required(),
+                    ]),
+                    Card::make()->columns(1)->columnSpan(2)->schema([
+                        MarkdownEditor::make('brief')->label('Brief Description')->disableAllToolbarButtons(),
+                        MarkdownEditor::make('content')->label('Long Description'),
                     ]),
                 ])
             ]);

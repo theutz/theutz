@@ -22,6 +22,7 @@ class Experience extends Model
         'city_state',
         'country',
         'content',
+        'brief',
         'job_title'
     ];
 
@@ -41,6 +42,7 @@ class Experience extends Model
         $table->timestamp('end_date')->nullable();
         $table->string('city_state')->nullable();
         $table->string('country')->nullable();
+        $table->text('brief')->nullable();
         $table->timestamp('published_at');
     }
 

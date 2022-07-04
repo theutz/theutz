@@ -22,7 +22,7 @@
                 {{ $item->start_date->longAbsoluteDiffForHumans($item->end_date) }}
             </x-slot:time>
 
-            {{ $item->content }}
+            {{ $item->brief ?? $item->content }}
         </x-entry>
     @endforeach
 
