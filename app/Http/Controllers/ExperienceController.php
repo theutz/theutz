@@ -13,9 +13,10 @@ class ExperienceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Experience $experience)
     {
-        //
+        $experiences = $experience->all()->sortByDesc('start_date');
+        return view('pages.experiences.index', ['items' => $experiences]);
     }
 
     /**

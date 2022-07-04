@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ExperienceController;
 use App\Models\Experience;
 use Illuminate\Support\Facades\Route;
 
@@ -14,14 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function (Experience $experience) {
-    $experiences = $experience->all()->sortByDesc('start_date');
-    return view('pages.index', ['items' => $experiences]);
-});
+Route::redirect('/', '/experiences');
 
-Route::get('/experience/:slug', function (Experience $experience) {
-    return view('pages.experience.show', $experience);
-});
+Route::prefix('/experiences')
+    ->controller(ExperienceController::class)
+    ->group(function () {
+        Route::get('/', 'index');
+        Route::get('/{experience}', 'show');
+    });
 
 Route::middleware([
     'auth:sanctum',

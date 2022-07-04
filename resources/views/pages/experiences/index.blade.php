@@ -4,7 +4,7 @@
     </x-slot:title>
 
     @foreach($items as $item)
-        @php $link = '/experience/'.$item->slug; @endphp
+        @php $link = '/experiences/'.$item->slug; @endphp
         <x-entry :id="$loop->iteration" :link="$link">
             <x-slot:title>
                 {{ __(':Title at :Company', ['title' => $item->job_title, 'company' => $item->company_name]) }}
@@ -23,10 +23,6 @@
             </x-slot:time>
 
             {{ $item->brief ?? $item->content }}
-
-            <x-slot:link>
-                /experience/{{ $item->slug }}
-            </x-slot:link>
         </x-entry>
     @endforeach
 
