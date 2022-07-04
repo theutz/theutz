@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Experience;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,13 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $episodes = collect()
-        ->range(0, 5)
-        ->map(fn() => (object) [
-            'published' => now(), 'id' => fake()->uuid(), 'title' => fake()->sentence(), 'description' => fake()->paragraph()
-        ]);
-    return view('pages.index', ['episodes' => $episodes]);
+Route::get('/', function (Experience $experience) {
+    $experiences = $experience->all()->sortByDesc('start_date');
+    return view('pages.index', ['items' => $experiences]);
 });
 
 Route::middleware([

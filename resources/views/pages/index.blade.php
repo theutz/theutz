@@ -1,12 +1,29 @@
 <x-guest-layout>
-    <div class="pt-16 pb-12 sm:pb-4 lg:pt-12">
-        <x-container>
-            <h1 class="text-2xl font-bold leading-7 text-slate-900">
-                Episodes
-            </h1>
-        </x-container>
-        <div class="divide-y divide-slate-100 sm:mt-4 lg:mt-8 lg:border-t lg:border-slate-100">
-            @each('components.episode-entry', $episodes, 'episode')
-        </div>
-    </div>
+    <x-slot:title>
+        {{ __('Experience') }}
+    </x-slot:title>
+
+    @foreach($items as $item)
+        <x-entry :slug="$item->slug">
+            <x-slot:title>
+                <a href="/{{ $item->slug }}">
+                    {{ __(':Title at :Company', ['title' => $item->job_title, 'company' => $item->company_name]) }}
+                </a>
+            </x-slot:title>
+            <x-slot:time>
+                {{ $item->start_date->isoFormat('MMM Y') }}
+                -
+                @isset ($item->end_date)
+                    {{ $item->end_date->isoFormat('MMM Y') }}
+                @else
+                    {{ __('Current') }}
+                @endisset
+                |
+                {{ $item->start_date->longAbsoluteDiffForHumans($item->end_date) }}
+            </x-slot:time>
+
+            {{ $item->brief ?? $item->content }}
+        </x-entry>
+    @endforeach
+
 </x-guest-layout>
