@@ -17,6 +17,7 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Str;
@@ -41,9 +42,18 @@ class ExperienceResource extends Resource
                         })
                         ->required(),
                     Card::make()->columns(2)->columnSpan(2)->schema([
-                        TextInput::make('company_name')->columnSpan(2),
+                        Fieldset::make('Job Info')->schema([
+                            TextInput::make('company_name')->required(),
+                            TextInput::make('job_title')
+                                ->required(),
+                        ]),
                         Fieldset::make('Date Range')->schema([
-                            DatePicker::make('start_date')->required(),
+                            DatePicker::make('start_date')
+                                ->reactive()
+                                ->afterStateUpdated(function (Closure $set, $state) {
+                                    $set('end_date', $state);
+                                })
+                                ->required(),
                             DatePicker::make('end_date'),
                         ]),
                         Fieldset::make('Location')->schema([
@@ -64,7 +74,8 @@ class ExperienceResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('title'),
+                Tables\Columns\TextColumn::make('start_date')->since()->sortable()
             ])
             ->filters([
                 //

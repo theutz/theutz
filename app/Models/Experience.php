@@ -21,7 +21,8 @@ class Experience extends Model
         'company_name',
         'city_state',
         'country',
-        'content'
+        'content',
+        'job_title'
     ];
 
     protected $casts = [
