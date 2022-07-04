@@ -17,12 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/experiences');
 
-Route::prefix('/experiences')
-    ->controller(ExperienceController::class)
-    ->group(function () {
-        Route::get('/', 'index');
-        Route::get('/{experience}', 'show');
-    });
+Route::resource('experiences', ExperienceController::class);
 
 Route::middleware([
     'auth:sanctum',
