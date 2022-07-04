@@ -2,8 +2,10 @@
          class="py-10 sm:py-12">
     <x-container>
         <div class="flex flex-col items-start">
-            <h2 id="item-{{ $id ?? $slug }}-title"
-                class="mt-2 text-lg font-bold text-slate-900">
+            <h2
+                {{ $title->attributes->class(["mt-2 text-lg font-bold text-slate-900 flex flex-col sm:flex-row w-full"]) }}
+                id="item-{{ $id ?? $slug }}-title"
+            >
                 <a href="/{{ $slug }}">{{ $title }}</a>
             </h2>
             @isset($time)

@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function (Experience $experience) {
-    $experiences = $experience->all();
+    $experiences = $experience->all()->sortByDesc('start_date');
     return view('pages.index', ['items' => $experiences]);
 });
 

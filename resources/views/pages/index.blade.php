@@ -4,7 +4,12 @@
     </x-slot:title>
 
     @foreach($items as $item)
-        <x-entry :title="$item->title" :slug="$item->id">
+        <x-entry :slug="$item->slug">
+            <x-slot:title>
+                <a href="/{{ $item->slug }}">
+                    {{ __(':Title at :Company', ['title' => $item->job_title, 'company' => $item->company_name]) }}
+                </a>
+            </x-slot:title>
             <x-slot:time>
                 {{ $item->start_date->isoFormat('MMM Y') }}
                 -
@@ -13,8 +18,8 @@
                 @else
                     {{ __('Current') }}
                 @endisset
-                    |
-                    {{ $item->start_date->longAbsoluteDiffForHumans($item->end_date) }}
+                |
+                {{ $item->start_date->longAbsoluteDiffForHumans($item->end_date) }}
             </x-slot:time>
 
             {{ $item->content }}
