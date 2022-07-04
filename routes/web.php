@@ -19,6 +19,10 @@ Route::get('/', function (Experience $experience) {
     return view('pages.index', ['items' => $experiences]);
 });
 
+Route::get('/experience/:slug', function (Experience $experience) {
+    return view('pages.experience.show', $experience);
+});
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
