@@ -3,7 +3,7 @@ title: Unity
 slug: unity
 company_name: 'Unity Technologies'
 job_title: 'Front End Developer'
-start_date: 2019-03-00T00:00:00+00:00
+start_date: 2019-03-01T00:00:00+00:00
 end_date: 2020-10-01T00:00:00+00:00
 city_state: Helsinki
 country: Finland
