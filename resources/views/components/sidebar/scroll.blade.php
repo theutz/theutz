@@ -25,34 +25,15 @@
         </h2>
         <div class="h-px bg-gradient-to-r from-slate-200/0 via-slate-200 to-slate-200/0 lg:hidden"></div>
         <ul class="flex justify-center mt-4 space-x-10 text-base font-medium leading-7 text-slate-700 sm:space-x-8 lg:block lg:space-x-0 lg:space-y-4">
+            @foreach(config('site.links') as $name => $url)
             <li class="flex">
-                <a href="{{ config('site.links.facebook') }}" class="flex items-center group">
-                    <x-simpleicon-facebook class="w-8 h-8 fill-slate-400 group-hover:fill-slate-600" />
-                    <span class="sr-only sm:hidden">Facebook</span>
-                    <span class="hidden sm:ml-3 sm:block">Facebook</span>
+                <a href="{{ $url }}" class="flex items-center group">
+                    <x-dynamic-component component="simpleicon-{{ $name }}" class="w-8 h-8 fill-slate-400 group-hover:fill-slate-600" />
+                    <span class="sr-only sm:hidden">{{ ucfirst($name) }}</span>
+                    <span class="hidden sm:ml-3 sm:block">{{ ucfirst($name) }}</span>
                 </a>
             </li>
-            <li class="flex">
-                <a href="{{ config('site.links.twitter') }}" class="flex items-center group">
-                    <x-simpleicon-twitter class="w-8 h-8 fill-slate-400 group-hover:fill-slate-600" />
-                    <span class="sr-only sm:hidden">Twitter</span>
-                    <span class="hidden sm:ml-3 sm:block">Twitter</span>
-                </a>
-            </li>
-            <li class="flex">
-                <a href="{{ config('site.links.linkedin') }}" class="flex items-center group">
-                    <x-simpleicon-linkedin class="w-8 h-8 fill-slate-400 group-hover:fill-slate-600" />
-                    <span class="sr-only sm:hidden">Linkedin</span>
-                    <span class="hidden sm:ml-3 sm:block">Linkedin</span>
-                </a>
-            </li>
-            <li class="flex">
-                <a href="{{ config('site.links.instagram') }}" class="flex items-center group">
-                    <x-simpleicon-instagram class="w-8 h-8 fill-slate-400 group-hover:fill-slate-600" />
-                    <span class="sr-only sm:hidden">Instagram</span>
-                    <span class="hidden sm:ml-3 sm:block">Instagram</span>
-                </a>
-            </li>
+            @endforeach
         </ul>
     </section>
 </div>

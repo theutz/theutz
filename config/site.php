@@ -31,10 +31,9 @@ return [
      * Collection of social and contact links
      */
     'links' => [
+        'linkedin' => 'https://linkedin.com/in/theutz',
+        'twitter' => 'https://twitter.com/theutz',
         'facebook' => 'https://facebook.com/utzbaba',
         'instagram' => 'https://www.instagram.com/michael_utz',
-        'twitter' => 'https://twitter.com/theutz',
-        'linkedin' => 'https://linkedin.com/in/theutz',
-        'email' => 'michael@theutz.com'
     ]
 ];
