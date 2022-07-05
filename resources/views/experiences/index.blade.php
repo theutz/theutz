@@ -13,11 +13,15 @@
                  :start="$item->start_date"
                  :end="$item->end_date"
         >
-            <x-slot:title>
+            <x-slot:heading>
                 {{ __(':Title at :Company', ['title' => $item->job_title, 'company' => $item->company_name]) }}
-            </x-slot:title>
+            </x-slot:heading>
 
-            {{ $item->brief ?? $item->content }}
+            <x-slot:subheading>
+                {{ $item->brief }}
+            </x-slot:subheading>
+
+            {{ $item->content }}
         </x-entry>
     @endforeach
 
