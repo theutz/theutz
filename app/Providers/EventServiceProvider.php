@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Subscribers\OrbitEventSubscriber;
+use App\Subscribers\CommitOrbitChangesSubscriber;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -25,7 +25,7 @@ class EventServiceProvider extends ServiceProvider
  * The subscriber classes to register.
  */
     protected $subscribe = [
-        OrbitEventSubscriber::class
+        CommitOrbitChangesSubscriber::class
     ];
 
     /**

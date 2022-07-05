@@ -10,7 +10,7 @@ use Orbit\Events\OrbitalDeleted;
 use Orbit\Events\OrbitalForceDeleted;
 use Orbit\Events\OrbitalUpdated;
 
-class OrbitEventSubscriber
+class CommitOrbitChangesSubscriber
 {
     private GitRepository $repo;
 
@@ -58,8 +58,7 @@ class OrbitEventSubscriber
     private function commit(
         OrbitalCreated|OrbitalUpdated|OrbitalDeleted|OrbitalForceDeleted $event,
         string $message
-    )
-    {
+    ) {
         $file = $this->getFilePathFromEvent($event);
         $action = $this->getOperationType($event);
         $this->repo->$action($file);
