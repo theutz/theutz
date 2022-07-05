@@ -28,15 +28,21 @@
                     href="{{ route('experiences.show', ['experience' => $experience->prev ]) }}"
                     @endif
                     @class(['text-pink-500' => $experience->prev, 'text-slate-200' => !$experience->prev])
-                    >
-                    {!! __('pagination.previous') !!}
+                >
+                    @if($experience->prev)
+                         &larr;
+                        {{ $experience->prev->title }}
+                    @endif
                 </a>
                 <a @if($experience->next)
                     href="{{ route('experiences.show', ['experience' => $experience->next ]) }}"
                     @endif
                     @class(['text-pink-500' => $experience->next, 'text-slate-200' => !$experience->next])
-                    >
-                    {!! __('pagination.next') !!}
+                >
+                    @if ($experience->next)
+                        {{ $experience->next->title }}
+                        &rarr;
+                    @endif
                 </a>
             </nav>
         </x-container>

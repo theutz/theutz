@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Query\Builder;
 use Illuminate\Database\Schema\Blueprint;
 use Orbit\Concerns\Orbital;
 
@@ -60,14 +61,16 @@ class Experience extends Model
     protected function next(): Attribute
     {
         return Attribute::make(
-            get: fn() => static::where('start_date', '>', $this->start_date)->first()
+            get: function () {
+                return static::where('start_date', '>', $this->start_date)->orderBy('start_date')->first();
+            }
         );
     }
 
     protected function prev(): Attribute
     {
         return Attribute::make(
-            get: fn () => static::where('start_date', '<', $this->start_date)->get()->last()
+            get: fn () => static::where('start_date', '<', $this->start_date)->orderBy('start_date', 'desc')->first()
         );
     }
 }
