@@ -1,14 +1,14 @@
 ---
 title: Smartly
 slug: smartly
-company_name: Smartly
+company_name: Smartly.io
 job_title: 'Team Lead'
 start_date: 2020-10-04T00:00:00+00:00
 end_date: 2021-10-04T00:00:00+00:00
 city_state: Helsinki
 country: Finland
 brief: |-
-    From front-end to team lead...
+    From front-end to team lead.
 published_at: 2022-07-04T00:00:00+00:00
 created_at: 2022-07-04T14:57:51+00:00
 updated_at: 2022-07-05T14:16:59+00:00
