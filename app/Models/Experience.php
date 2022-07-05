@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Schema\Blueprint;
@@ -54,5 +55,19 @@ class Experience extends Model
     public function getIncrementing()
     {
         return false;
+    }
+
+    protected function next(): Attribute
+    {
+        return Attribute::make(
+            get: fn() => static::where('start_date', '>', $this->start_date)->first()
+        );
+    }
+
+    protected function prev(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => static::where('start_date', '<', $this->start_date)->get()->last()
+        );
     }
 }

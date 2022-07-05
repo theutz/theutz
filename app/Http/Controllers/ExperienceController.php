@@ -48,7 +48,7 @@ class ExperienceController extends Controller
      */
     public function show(Experience $experience)
     {
-        return view('experiences.show', ['experience' => $experience]);
+        return view('experiences.show', compact('experience'));
     }
 
     /**

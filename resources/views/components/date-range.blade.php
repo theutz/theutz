@@ -1,6 +1,7 @@
 @props(['start', 'end'])
 
-<time datetime="{{ $start }}{{ $end }}" {{ $attributes->class(["-order-1 font-mono text-sm leading-7 text-slate-500"]) }}>
+<time datetime="{{ $start }}{{ $end }}"
+{{ $attributes->class(["-order-1 font-mono text-sm leading-7 text-slate-500"]) }}>
     {{ $start->isoFormat('MMM Y') }}
     -
     @isset ($end)
