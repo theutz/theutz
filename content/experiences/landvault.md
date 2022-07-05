@@ -13,7 +13,7 @@ brief: |-
     Developing a healthy content management system.
 ---
 
-My primary duties at LandVault were centered around the creation and maintenance of multiple Content Management Systems (CMS).
+My primary duties at [LandVault](https://landvault.io) were centered around the creation and maintenance of multiple Content Management Systems (CMS).
 
 When I was hired, (then) Admix's branded corporate properites were scattered around the web in multiple different systems. They had some page-builder-style properties, a few WordPress instances, and some static sites.
 
@@ -21,19 +21,27 @@ Throughout my time, we began transitioning everything into [Statamic](https://st
 
 Additionally, the documentation for the company's primary software product was stuck on version 1 of Docusaurus, and I migrated them to version 2. This required some basic React-foo, but otherwise was fairly straightforward.
 
+While the company was based in London, I worked fully-remote.
+
+### Projects
+
+- Implement the redesign of [Admix's corporate site](https://admixplay.com)
+- Assist with the redeployment of VRFocus to [gmw3.com](https://gmw3.com)
+- Migrate their docs from [Docusaurus](https://docusaurus.io) v1 -> v2
+
 ### Stacks
 
 #### Corporate Site CMSs
 
 - [Statamic](https://statamic.com)
 - [Laravel](https://laravel.com)
-- PHP
-- AWS EC2
+- [PHP](https://php.net)
+- [AWS EC2](https://aws.amazon.com/ec2/)
 
 #### Docs CMS
 
 - [Docusaurus](https://docusaurus.io)
 - [React](https://reactjs.org)
-- NodeJS
-- AWS Amplify
+- [NodeJS](https://nodejs.org/en/)
+- [AWS Amplify](https://aws.amazon.com/amplify/)
 
