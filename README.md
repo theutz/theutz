@@ -1,4 +1,4 @@
-# About Me
+Hello! I’m Michael Utz, currently living in Turkey but originally from the United States. I’ve been involved in web development since 2008, starting my career in front-end development and gradually expanding my skills to include full-stack development, devops, and infrastructure. I enjoy the challenges that come with evolving technologies and take pride in creating effective web solutions. Outside of work, I like to explore new places and appreciate the local culture here in Turkey.
 
 <!--
 **theutz/theutz** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
